@@ -8,7 +8,15 @@
 			.column-left .column-right { padding: 20px;	}
 			.column-left  { float: left;  }
 			.column-right { float: right; }
-			h1, h2 { font-size: 1em; font-weight: normal; }
+			h1, h2 {
+				font-size: 1em;
+				font-weight: normal;
+			}
+			hr {
+				margin-left: 0;
+				text-align: left;
+				width: 50%;
+			}
 		</style>
 	</head>
 	<body>
@@ -16,42 +24,48 @@
 		<p>This is a page I made with some useful links to kickstart your World Wide Web experience.</p>
 		<p>I've <b>bolded</b> my favorite sites (ones that impress me via privacy, security, or ease of use).</p>
 		<p>Sections that have bolded Roman numerals (<a href="https://www.wikihow.com/Read-Roman-Numerals">"How do I read Roman numerals?"</a>) are services that are particularly important (in my opinion) for a web-goer to be aware of, with <b>I</b> indicating the most important category and <b>II</b> indicating the second-most important category (and onward).</p>
-		<p>Sections that have a bolded X are categories of sites that tend to manipulate users, like social media.</p>
+		<p>Sections that have a bolded <b>!P</b> are categories of sites that tend to prey on users, like social media.</p>
+		<p>
+			Sections that have a bolded <b>!V</b> tend to contain malware that can break your computer.
+			If you're one of those magical tech wizards you can safely ignore this warning.
+		</p>
 		<p>Sites are ordered alphabetically.</p>
 		<div class="column-left">
-			<h2><b>I</b> Search engines:</h2>
-				<p>      <a href="https://www.baidu.com/">Baidu</a>
-				<br />   <a href="https://www.bing.com/">Bing</a> (owned by Microsoft)
-				<br /><b><a href="https://duckduckgo.com/">DuckDuckGo</a></b>
-				<br />   <a href="https://google.com/">Google</a>
-				<br />   <a href="https://www.yahoo.com/">Yahoo!</a>
-			</p>
-			<h2><b>II</b> References:</h2>
-				<p>      <a href="https://www.wikipedia.org/">Wikipedia</a>
-			</p>
-			<h2>Shopping on the World Wide Web:</h2>
-				<p>      <a href="https://www.amazon.com/">Amazon</a>
-				<br />   <a href="https://taobao.com/">Taobao</a>
-			</p>
-			<h2><b>X</b> Social media:</h2>
-				<p>      <a href="https://www.facebook.com/">Facebook</a>
-				<br />   <a href="https://www.instagram.com/">Instagram</a> (owned by Facebook)
-				<br />   <a href="https://www.qq.com/">QQ</a>
-				<br />   <a href="https://www.reddit.com/">Reddit</a>
-					(here's the <a href="https://old.reddit.com/">old version</a>)
-				<br />   <a href="https://www.twitch.tv">Twitch</a> (owned by Amazon)
-				<br />   <a href="https://www.youtube.com/">YouTube</a> (owned by Google)
-				<br />   <a href="https://zoom.us/">Zoom</a>
-			</p>
+			<h2 id="engines"><b>I</b> Search engines:</h2>
+			<p><a href="https://www.baidu.com/">Baidu</a></p>
+			<p><a href="https://www.bing.com/">Bing</a> (owned by Microsoft)</p>
+			<p><b><a href="https://duckduckgo.com/">DuckDuckGo</a></b></p>
+			<p><a href="https://google.com/">Google</a></p>
+			<p><a href="https://www.yahoo.com/">Yahoo!</a></p>
+			<hr />
+			<h2 id="references"><b>II</b> References:</h2>
+			<p><a href="https://www.wikipedia.org/">Wikipedia</a></p>
+			<hr />
+			<h2 id="shopping"><b>!P</b> Shopping on the World Wide Web:</h2>
+			<p><a href="https://www.aliexpress.com/">AliExpress</a></p>
+			<p><a href="https://www.amazon.com/">Amazon</a></p>
+			<p><a href="https://taobao.com/">Taobao</a></p>
+			<hr />
+			<h2 id="social"><b>!P</b> Social media:</h2>
+			<p><a href="https://www.facebook.com/">Facebook</a></p>
+			<p><a href="https://www.instagram.com/">Instagram</a> (owned by Facebook)</p>
+			<p><a href="https://www.qq.com/">QQ</a></p>
+			<p><a href="https://www.reddit.com/">Reddit</a>
+				(here's the <a href="https://old.reddit.com/">old version</a>)</p>
+			<p><a href="https://www.twitch.tv">Twitch</a> (owned by Amazon)</p>
+			<p><a href="https://www.youtube.com/">YouTube</a> (owned by Google)</p>
+			<p><a href="https://zoom.us/">Zoom</a></p>
 		</div>
-		<div class="column-right">
-			<img src="https://ia801904.us.archive.org/33/items/dblake-avatars/2020-05-17.png" alt="Deven Blake profile picture" style="width: 100px; float: left; margin-right: 10px;" />
+		<div class="column-right" style="width: 40%;">
+			<img src="https://ia801904.us.archive.org/33/items/dblake-avatars/2020-05-17.png" alt="Deven Blake profile picture" style="width: 100px; margin-right: 10px;" />
 			<p><small>I'm Deven Blake, the person who made this little landing page.
-				I hope you enjoy it!
+				I hope you enjoy it! It's 100% hand-typed HTML, feel free to snoop around.
 				<br /><a href="https://blake.instantfloppy.net/">Visit my website.</a>
 				<br />Email me using the address on my site if you'd like me to add anything.
 					Don't be shy!
 			</small></p>
+			<p>I consider web <a href="#shopping">shopping</a> predatory due to the frequency of misleading and fraudulent ads on the platforms.</p>
+			<p>I consider <a href="#social">social media</a> predatory due to most services' lack of moderation and frequency of dangerous and illegal content.</p>
 			<p>This webpage and only this webpage (<b>not</b> the content hyperlinked and hotlinked on this webpage) belongs to the public domain and includes no warranty.</p>
 			<p>Created 2020-09-13.</p>
 		</div>
