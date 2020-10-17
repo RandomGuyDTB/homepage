@@ -4,18 +4,8 @@
     <TITLE>(d+(7-s))</TITLE>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      body {
-        background-color: #3B6EA5;
-        color: #FFFFFF;
-        font-weight: bold;
-      }
-      a { 
-        font-weight: normal; 
-        color: #FFFFFF;
-      }
-    </style>
     <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/devenblake/homepage/master/favicon.ico">
+    <link rel="stylesheet" id="styling" href="./windowsclassic.css" />
   </HEAD>
   <BODY>
     <p>Hi, I'm Deven Blake. I'm just your normal everyday nerd.</p>
@@ -66,7 +56,20 @@
     <input type="button" value="prefix (s-expression)" onclick="document.title='(+ d (- 7 s))';" />
     <input type="button" value="infix (algrebraic)" onclick="document.title='(d+(7-s))';" />
     <input type="button" value="postfix (rpn)" onclick="document.title='d 7 s - +';" />
+    <p><small>The following buttons use JavaScript to change this page's stylesheet.</small></p>
+    <input
+      type="button" value="notheme"
+      onclick="document.getElementById('styling').setAttribute('href', '');"
+    />
+    <input
+      type="button" value="givemerights"
+      onclick="document.getElementById('styling').setAttribute('href', 'givemerights.css');"
+    />
+    <input
+      type="button" value="windowsclassic"
+      onclick="document.getElementById('styling').setAttribute('href', 'windowsclassic.css');"
+    />
     <hr size="1" width="25%" align="left" />
-    <p>This site is best viewed in Firefox.</p>
+    <p>This site is best viewed in Firefox but is tested in Lynx. </p>
   </BODY>
 </HTML>
