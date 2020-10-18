@@ -1,75 +1,175 @@
 <!DOCTYPE html>
 <HTML>
-  <HEAD>
-    <TITLE>(d+(7-s))</TITLE>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/devenblake/homepage/master/favicon.ico">
-    <link rel="stylesheet" id="styling" href="./windowsclassic.css" />
-  </HEAD>
-  <BODY>
-    <p>Hi, I'm Deven Blake. I'm just your normal everyday nerd.</p>
-    <p><small>translations of my name include:<br />ديفين بلايك<br />バレイク デビン (BLAKE Deven)</small></p>
-    <p>My pronouns are <code>they/them</code>.
-    <p>My <a href="https://www.politicalcompass.org">political compass</a> co-ordinates are <a href="https://www.politicalcompass.org/chart?ec=-8.88&soc=-8.56">(-8.88, -8.56)</a>.</p>
-    <hr size="1" width="25%" align="left">
-    <p>I'm TestOut PC Pro certified (which doesn't mean much, but I earned 2000 of the 2000 possible points on the certification exam). I have a functional knowledge of Python and almost grasp C.</p>
-    <p><a href="https://duckduckgo.com/?q=deven+blake">Look me up online</a>.</p>
-    <hr size="1" width="25%" align="left">
-    <p>I have a somewhat barren <a href="https://ibukimaya.itch.io/">itch.io page</a>.</p>
-    <p>I also have a <a href="https://blake.1mb.site/">1mb site</a>.</p>
-    <hr size="1" width="25%" align="left" />
-    <p>You can contact me at</p>
-    <p>- blakedevendesu@gmail.com (<i>preferably</i>)</p>
-    <p>- deven@waifu.club</p>
-    <p>Services I'm on include...</p>
-    <p>- All Things Weezer, deven</p>
-    <p>- ArchWiki, deven</p>
-    <p>- Bandcamp, devenblake</p>
-    <p>- Byte, d3ven</p>
-    <p>- Codeberg, deven</p>
-    <p>- CodeWalrus, deven</p>
-    <p>- GitHub, devenblake</p>
-    <p>- GitLab, devenblake</p>
-    <p>- Goodreads, devenblake</p>
-    <p>- ieddit, deven</p>
-    <p>- Instagram, deven.blake</p>
-    <p>- Likee, deven</p>
-    <p>- MySpace, devenblake</p>
-    <p>- Notabug, deven</p>
-    <p>- Reddit, u/devenblake</p>
-    <p>- Soundcloud, devenblake</p>
-    <p>- Subreply, deven</p>
-    <p>- Tumblr, devenblake</p>
-    <p>- Twitter, unixuserdtb</p>
-    <p>None of these are guaranteed to still be on-line. I also didn't hyperlink any of those because I would much rather talk to you via email or another open platform.</p>
-    <hr size="1" width="25%" align="left" />
-    <p><a href="./films">check out my favorite movies</a></p>
-    <p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">here's a video of me waterboarding myself with mountain dew</a></p>
-    <p><a href="./home">check out a web browser landing page i made</a></p>
-    <p><a href="./textediting">here are my opinions on text editing</a></p>
-    <p style="font-weight: normal; text-decoration: underline;">you just lost the game</p>
-    <p><a href="./git">here's my take on the git main thing</a></p>
-    <p><a href="./now">here's what i'm doing right now</a></p>
-    <hr size="1" width="25%" align="left" />
-    <p><small>The following buttons use JavaScript to modify the page title.</small></p>
-    <input type="button" value="prefix (s-expression)" onclick="document.title='(+ d (- 7 s))';" />
-    <input type="button" value="infix (algrebraic)" onclick="document.title='(d+(7-s))';" />
-    <input type="button" value="postfix (rpn)" onclick="document.title='d 7 s - +';" />
-    <p><small>The following buttons use JavaScript to change this page's stylesheet.</small></p>
-    <input
-      type="button" value="notheme"
-      onclick="document.getElementById('styling').setAttribute('href', '');"
-    />
-    <input
-      type="button" value="givemerights"
-      onclick="document.getElementById('styling').setAttribute('href', 'givemerights.css');"
-    />
-    <input
-      type="button" value="windowsclassic"
-      onclick="document.getElementById('styling').setAttribute('href', 'windowsclassic.css');"
-    />
-    <hr size="1" width="25%" align="left" />
-    <p>This site is best viewed in Firefox but is tested in Lynx. </p>
-  </BODY>
+<HEAD>
+	<TITLE>(d+(7-s))</TITLE>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link
+rel="shortcut icon"
+type="image/x-icon"
+href="https://raw.githubusercontent.com/devenblake/homepage/main/favicon.ico"
+	/>
+	<link rel="stylesheet" id="styling" href="" />
+</HEAD>
+<BODY>
+	<script>
+/*
+	these code snippets stolen from
+	https://www.w3schools.com/js/js_cookies.asp
+*/
+function setCookie(cname, cvalue, exdays) {
+	var d = new Date();
+	d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	var expires = "expires="+ d.toUTCString();
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+	var name = cname + "=";
+	var decodedCookie = decodeURIComponent(document.cookie);
+	var ca = decodedCookie.split(';');
+	for(var i = 0; i <ca.length; i++) {
+		var c = ca[i];
+		while(c.charAt(0) == ' ') c = c.substring(1);
+		if(c.indexOf(name) == 0)
+			return c.substring(name.length, c.length);
+	}
+	return "";
+}
+/* end stolen code; */
+
+function setStyling(sheet) {
+	document.getElementById('styling')
+		.setAttribute('href', sheet + ".css");
+	return sheet;
+}
+
+var sheet = getCookie('sheet');
+var title = getCookie('title');
+if(title != '') document.title = title;
+if(sheet != '') setStyling(sheet);
+
+	</script>
+	<p>Hi, I'm Deven Blake. I'm just your normal everyday nerd.</p>
+	<p><small>
+translations of my name include: <br />
+ديفين بلايك <br />
+バレイク デビン (BLAKE Deven)
+	</small></p>
+	<p>My pronouns are <code>they/them</code>.</p>
+	<p>
+My <a href="https://www.politicalcompass.org">political compass</a>
+co-ordinates are
+<a href="https://www.politicalcompass.org/chart?ec=-8.88&soc=-8.56">
+(-8.88, -8.56)
+</a>.
+	</p>
+	<p>
+<a href="https://duckduckgo.com/?q=deven+blake">Look me up online</a>.
+	</p>
+	<hr size="1" width="25%" align="left">
+	<p><small>
+This page has two cookies.
+One stores your selected theme, if such a selection has been made,
+and the other one is from Cloudflare and probably spies on you.
+JavaScript is used to customize the page title and to customize the
+stylesheet being used.
+Please get in touch if this site doesn't work without JavaScript or cookies,
+I would prefer this to be accessible to as many people as possible with the
+sacrifice of prettiness if so required.
+	</small></p>
+	<hr size="1" width="25%" align="left">
+	<p>
+I'm TestOut PC Pro certified (which doesn't mean much, but I earned 2000 of the
+2000 possible points on the certification exam).
+I have a functional knowledge of Python and almost grasp C.
+	</p>
+	<hr size="1" width="25%" align="left" />
+	<p>You can contact me at...</p>
+	<p>- blakedevendesu@gmail.com (<i>preferably</i>)</p>
+	<p>- deven@waifu.club</p>
+	<hr size="1" width="25%" align="left" />
+	<p>Services I'm on include...</p>
+	<p>- <a href="https://blake.1mb.site/">1mb.site</a>.</p>
+	<p>- All Things Weezer, deven</p>
+	<p>- ArchWiki, deven</p>
+	<p>- Bandcamp, devenblake</p>
+	<p>- Byte, d3ven</p>
+	<p>- Codeberg, deven</p>
+	<p>- CodeWalrus, deven</p>
+	<p>- GitHub, devenblake</p>
+	<p>- GitLab, devenblake</p>
+	<p>- Goodreads, devenblake</p>
+	<p>- ieddit, deven</p>
+	<p>- Instagram, deven.blake</p>
+	<p>- <a href="https://ibukimaya.itch.io/">itch.io</a>.</p>
+	<p>- Likee, deven</p>
+	<p>- MySpace, devenblake</p>
+	<p>- Notabug, deven</p>
+	<p>- Reddit, u/devenblake</p>
+	<p>- Soundcloud, devenblake</p>
+	<p>- Subreply, deven</p>
+	<p>- Tumblr, devenblake</p>
+	<p>- Twitter, unixuserdtb</p>
+	<p>
+None of these are guaranteed to still be on-line.
+I would much rather talk to you via email or Signal instead of using something
+like Facebook or Discord.
+	</p>
+	<hr size="1" width="25%" align="left" />
+	<p><a href="./films">check out my favorite movies</a></p>
+	<p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+here's a video of me waterboarding myself with mountain dew
+	</a></p>
+	<p><a href="./home">check out a web browser landing page i made</a></p>
+	<p><a href="./textediting">here are my opinions on text editing</a></p>
+	<p style="font-weight: normal; text-decoration: underline;">
+you just lost the game
+	</p>
+	<p><a href="./git">here's my take on the git main thing</a></p>
+	<p><a href="./now">here's what i'm doing right now</a></p>
+	<hr size="1" width="25%" align="left" />
+	<p><small>
+The following buttons use JavaScript to modify the page title.
+	</small></p>
+	<input
+type="button" value="prefix (s-expression)"
+onclick="title='(+ d (- 7 s))'; document.title=title;"
+	/>
+	<input
+type="button" value="infix (algrebraic)"
+onclick="title='(d+(7-s))'; document.title=title;"
+	/>
+	<input
+type="button" value="postfix (rpn)"
+onclick="document.title='d 7 s - +';"
+	/>
+	<p><small>
+The following buttons use JavaScript to change this page's stylesheet.
+	</small></p>
+	<input
+type="button" value="notheme"
+onclick="
+document.getElementById('styling').setAttribute('href', '');
+sheet='';
+"
+	/>
+	<input
+type="button" value="givemerights"
+onclick="sheet = setStyling('givemerights');"
+	/>
+	<input
+type="button" value="windowsclassic"
+onclick="sheet = setStyling('windowsclassic');"
+	/>
+	<p><small>
+The following button manipulates the site cookie. It might not work.
+	</small></p>
+	<input
+type="button" value="save page settings"
+onclick="setCookie('title', title, 365); setCookie('sheet', sheet, 365);"
+	/>
+	<hr size="1" width="25%" align="left" />
+	<p>This site is best viewed in Firefox but is tested in Lynx.</p>
+</BODY>
 </HTML>
