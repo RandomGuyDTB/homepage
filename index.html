@@ -145,7 +145,7 @@ type="button" value="postfix (rpn)"
 onclick="document.title='d 7 s - +';"
 	/>
 	<p><small>
-The following buttons use JavaScript to change this page's stylesheet.
+The following inputs use JavaScript to change this page's stylesheet.
 	</small></p>
 	<input
 type="button" value="notheme"
@@ -162,8 +162,14 @@ onclick="sheet = setStyling('givemerights');"
 type="button" value="windowsclassic"
 onclick="sheet = setStyling('windowsclassic');"
 	/>
+	<p></p>
+	<input id="customSheet" type="text" value="custom" />
+	<input
+type="button" value="<-"
+onclick="sheet = setStyling(document.getElementById('customSheet').value);"
+	/>
 	<p><small>
-The following button manipulates the site cookie. It might not work.
+The following button manipulates the site cookie.
 	</small></p>
 	<input
 type="button" value="save page settings"
