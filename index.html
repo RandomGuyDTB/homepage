@@ -8,6 +8,7 @@
 <LINK rel="stylesheet" id="styling" href="" />
 </HEAD>
 <BODY>
+<SCRIPT src="/main.js"></SCRIPT>
 <SCRIPT>
 function setStyling(sheet) { document.getElementById('styling').setAttribute('href', sheet); return sheet; }
 var sheet = getCookie('sheet');
@@ -88,9 +89,9 @@ I would much rather talk to you via email or Signal instead of using something l
 <hr size="1" width="25%" align="left" />
 
 <p><small>The following buttons use JavaScript to modify the page title.</small></p>
-<input type="button" value="prefix (s-expression)" onclick="document.title='(+ d (- 7 s));" />
-<input type="button" value="infix (algrebraic)"    onclick="document.title='(d+(7-s))';"    />
-<input type="button" value="postfix (rpn)"         onclick="document.title='d 7 s - +';"    />
+<input type="button" value="prefix (s-expression)" onclick="document.title='(+ d (- 7 s))';" />
+<input type="button" value="infix (algrebraic)"    onclick="document.title='(d+(7-s))';"     />
+<input type="button" value="postfix (rpn)"         onclick="document.title='d 7 s - +';"     />
 <p><small>The following inputs use JavaScript to change this page's stylesheet.</small></p>
 <input type="button" value="notheme"        onclick="document.getElementById('styling').setAttribute('href', ''); sheet='';" />
 <input type="button" value="givemerights"   onclick="sheet = setStyling('givemerights.css');"                                />
@@ -99,7 +100,7 @@ I would much rather talk to you via email or Signal instead of using something l
 <input id="customSheet" type="text" value="custom" />
 <input type="button" value="<-" onclick="sheet = setStyling(document.getElementById('customSheet').value);" />
 <p><small>The following button manipulates the site cookie.</small></p>
-<INPUT type="button" value="save page settings" onclick="setCookie('title', title, 365); setCookie('sheet', sheet, 365);" />
+<INPUT type="button" value="save page settings" onclick="setCookie('sheet', sheet, 365);" />
 
 <HR size="1" width="25%" align="left" />
 
