@@ -22,7 +22,7 @@ function getCookie(cname) {
 }
 /* end stolen code; */
 
-function setStyling(sheet, pathToRoot) {
+function setStyling(sheet) {
 	document.getElementById('styling').setAttribute('href', sheet);
 	return sheet;
 }
