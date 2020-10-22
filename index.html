@@ -12,32 +12,8 @@ href="https://raw.githubusercontent.com/devenblake/homepage/main/favicon.ico"
 	<link rel="stylesheet" id="styling" href="" />
 </HEAD>
 <BODY>
-	<script>
-/*
-	these code snippets stolen from
-	https://www.w3schools.com/js/js_cookies.asp
-*/
-function setCookie(cname, cvalue, exdays) {
-	var d = new Date();
-	d.setTime(d.getTime() + (exdays*24*60*60*1000));
-	var expires = "expires="+ d.toUTCString();
-	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-	var name = cname + "=";
-	var decodedCookie = decodeURIComponent(document.cookie);
-	var ca = decodedCookie.split(';');
-	for(var i = 0; i <ca.length; i++) {
-		var c = ca[i];
-		while(c.charAt(0) == ' ') c = c.substring(1);
-		if(c.indexOf(name) == 0)
-			return c.substring(name.length, c.length);
-	}
-	return "";
-}
-/* end stolen code; */
-
+<script src="main.js" />
+<script>
 function setStyling(sheet) {
 	document.getElementById('styling')
 		.setAttribute('href', sheet + ".css");
@@ -48,8 +24,9 @@ var sheet = getCookie('sheet');
 var title = getCookie('title');
 if(title != '') document.title = title;
 if(sheet != '') setStyling(sheet);
-
-	</script>
+</script>
+<table><tr>
+<td valign="top" width="50%">
 	<p>Hi, I'm Deven Blake. I'm just your normal everyday nerd.</p>
 	<p><small>
 translations of my name include: <br />
@@ -78,7 +55,7 @@ Please get in touch if this site doesn't work without JavaScript or cookies,
 I would prefer this to be accessible to as many people as possible with the
 sacrifice of prettiness if so required.
 	</small></p>
-	<hr size="1" width="25%" align="left">
+	<hr size="1" width="25%" align="left" />
 	<p>
 I'm TestOut PC Pro certified (which doesn't mean much, but I earned 2000 of the
 2000 possible points on the certification exam).
@@ -117,7 +94,8 @@ None of these are guaranteed to still be on-line.
 I would much rather talk to you via email or Signal instead of using something
 like Facebook or Discord.
 	</p>
-	<hr size="1" width="25%" align="left" />
+</td>
+<td valign="top" width="50%">
 	<p><a href="./films">check out my favorite movies</a></p>
 	<p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
 here's a video of me waterboarding myself with mountain dew
@@ -129,6 +107,7 @@ you just lost the game
 	</p>
 	<p><a href="./git">here's my take on the git main thing</a></p>
 	<p><a href="./now">here's what i'm doing right now</a></p>
+	<p><a href="./devenzone">have you been to devenzone?</a></p>
 	<hr size="1" width="25%" align="left" />
 	<p><small>
 The following buttons use JavaScript to modify the page title.
@@ -177,6 +156,18 @@ type="button" value="save page settings"
 onclick="setCookie('title', title, 365); setCookie('sheet', sheet, 365);"
 	/>
 	<hr size="1" width="25%" align="left" />
-	<p>This site is best viewed in Firefox but is tested in Lynx.</p>
+	<a href="https://u.fsf.org/upcycle"><img
+		src="https://static.fsf.org/nosvn/windows/winupcycle_text.png"
+		width="300" alt="Upcycle Windows 7 petition image"
+	/></a>
+	<!-- <a href="https://stallman.org/facebook.html"><img
+		src="https://stallman.org/no-facebook-svg.png"
+		alt="Not f'd. You won't find me on Facebook" width="200"
+	/></a> Someday... -->
+</td></tr></table>
+
+<hr size="1" width="25%" align="left" />
+<p>This site is best viewed in Firefox but is tested in Lynx.</p>
+
 </BODY>
 </HTML>
