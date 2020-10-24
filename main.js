@@ -26,3 +26,11 @@ function setStyling(sheet) {
 	document.getElementById('styling').setAttribute('href', sheet);
 	return sheet;
 }
+function initialize(void) {
+	/*
+this can be local because the page that changes this (index.html) won't read it
+if `sheet` needs to be read on a page copy this verbatim rather than using the function
+	*/
+	var sheet = getCookie('sheet');
+	if(sheet != '') setStyling(sheet);
+}

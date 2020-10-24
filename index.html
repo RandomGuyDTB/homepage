@@ -9,10 +9,7 @@
 </HEAD>
 <BODY>
 <SCRIPT src="/main.js"></SCRIPT>
-<SCRIPT>
-var sheet = getCookie('sheet');
-if(sheet != '') setStyling(sheet);
-</SCRIPT>
+<SCRIPT>initialize();</SCRIPT>
 <TABLE><TR><TD valign="top" width="50%">
 <P>Hi, I'm Deven Blake. I'm just your normal everyday nerd.</P>
 <P><SMALL>
@@ -94,12 +91,12 @@ I would much rather talk to you via email or Signal instead of using something l
 <INPUT type="button" value="infix (algrebraic)"    onclick="document.title='(d+(7-s))';"     />
 <INPUT type="button" value="postfix (rpn)"         onclick="document.title='d 7 s - +';"     />
 <P><SMALL>The following inputs use JavaScript to change this page's stylesheet.</SMALL></P>
-<INPUT type="button" value="notheme"        onclick="document.getElementById('styling').setAttribute('href', ''); sheet='';" />
-<INPUT type="button" value="givemerights"   onclick="sheet = setStyling('givemerights.css');"                                />
-<INPUT type="button" value="windowsclassic" onclick="sheet = setStyling('windowsclassic.css');"                              />
+<INPUT type="button" value="notheme"        onclick="document.getElementById('styling').setAttribute('href', ''); sheet='';"  />
+<INPUT type="button" value="givemerights"   onclick="sheet = setStyling('/givemerights.css');"                                />
+<INPUT type="button" value="windowsclassic" onclick="sheet = setStyling('/windowsclassic.css');"                              />
 <P><SMALL>
 This input lets you summon an external stylesheet.
-For instance, you can enter in "windowsclassic.css" to manually use that theme rather than pushing a button.
+For instance, you can enter in "/windowsclassic.css" to manually use that theme rather than pushing a button.
 Any stylesheet from any on-line source will work.
 <B>Be careful because there's surely someone out there that will inject a virus into a stylesheet and get some poor sap to plug that in here.</B>
 </SMALL></P>
