@@ -9,7 +9,10 @@
 </HEAD>
 <BODY>
 <SCRIPT src="/main.js"></SCRIPT>
-<SCRIPT>initialize();</SCRIPT>
+<SCRIPT>
+var sheet = getCookie('sheet');
+if(sheet != '') setStyling(sheet);
+</SCRIPT>
 <TABLE><TR><TD valign="top" width="50%">
 <P>Hi, I'm Deven Blake. I'm just your normal everyday nerd.</P>
 <P><SMALL>
