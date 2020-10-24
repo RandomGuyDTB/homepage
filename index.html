@@ -89,6 +89,9 @@ I would much rather talk to you via email or Signal instead of using something l
 <HR size="1" width="25%" align="left" />
 
 <H4>Control panel</H4>
+<P><SMALL>Click the following buttons to use JavaScript to refresh their contents.</SMALL></P>
+<INPUT type="button" value="the 'sheet' variable"               id="js_sheet"     onclick="document.getElementById('js_sheet').setAttribute('value', sheet);"                  />
+<INPUT type="button" value="the 'sheet' variable in the cookie" id="cookie_sheet" onclick="document.getElementById('cookie_sheet').setAttribute('value', getCookie('sheet'));" />
 <P><SMALL>The following buttons use JavaScript to modify the page title.</SMALL></P>
 <INPUT type="button" value="prefix (s-expression)" onclick="document.title='(+ d (- 7 s))';" />
 <INPUT type="button" value="infix (algrebraic)"    onclick="document.title='(d+(7-s))';"     />
