@@ -22,16 +22,5 @@ function getCookie(cname) {
 }
 /* end stolen code; */
 
-function setStyling(sheet) {
-	document.getElementById('styling').setAttribute('href', sheet);
-	return sheet;
-}
-function initialize(void) {
-	/*
-~~this can be local because the page that changes this (index.html) won't read it~~
-- NOPE, it needs to be read in order to be able to apply the choice to the cookie.
-if `sheet` needs to be read on a page copy this verbatim rather than using the function
-	*/
-	var sheet = getCookie('sheet');
-	if(sheet != '') setStyling(sheet);
-}
+var sheet = getCookie('sheet');
+if(sheet != '') document.getElementById('styling').setAttribute('href', sheet);
