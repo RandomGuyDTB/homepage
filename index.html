@@ -9,7 +9,7 @@
 <META name="viewport" content="width=device-width, initial-scale=1" />
 </HEAD>
 <BODY>
-<SCRIPT>
+<SCRIPT TYPE="application/javascript">
 /*
 	these code snippets stolen from
 	https://www.w3schools.com/js/js_cookies.asp
@@ -38,8 +38,22 @@ function setStyling(sheet) {
 	document.getElementById('styling').setAttribute('href', sheet);
 	return sheet;
 }
+
+/* QUOTES! */
+
+var quotes = [
+	[ "Yeah, that's just how it is. Just, nothing. So much nothing that it hurts.",
+		"danger/u/ aefd79" ],
+	[ "Reason has always existed, but not always in a reasonable form.",
+		"Karl Marx" ]
+]
+
+quote = Math.floor(Math.random() * quotes.length))
+document.getElementById('quote').setAttribute('content', '"' + quotes[quote][0] + '"');
+document.getElementById('quoteauthor').setAttribute('content', '~ ' + quotes[quote][1]);
+
 </SCRIPT>
-<SCRIPT>
+<SCRIPT TYPE="application/javascript">
 var sheet = getCookie('sheet');
 if(sheet != '') setStyling(sheet);
 </SCRIPT>
@@ -157,6 +171,12 @@ Any stylesheet from any on-line source will work.
 <H4>Rants and other unsavory mumblings</H4>
 <P><A HREF="./rants/liberalism">here's my <B>rant</B> (not essay) on liberals (from a leftist perspective)</A></P>
 <P><A HREF="./shitlist">here's my "shitlist"</A></P>
+
+<HR size="1" width="25%" align="left" />
+
+<P>Here's a quote for you:</P>
+<P ID="quote">"Enable JavaScript to see a quote here."</P>
+<P ID="quoteauthor">~ Deven Blake</P>
 
 </TD></TR></TABLE>
 
