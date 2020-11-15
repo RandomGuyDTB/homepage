@@ -16,14 +16,14 @@
 	these code snippets stolen from
 	https://www.w3schools.com/js/js_cookies.asp
 */
-function setCookie(cname, cvalue, exdays) {
+window.setCookie = function(cname, cvalue, exdays) {
 	var d = new Date();
 	d.setTime(d.getTime() + (exdays*24*60*60*1000));
 	var expires = "expires="+ d.toUTCString();
 	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
+};
 
-function getCookie(cname) {
+window.getCookie = function(cname) {
 	var name = cname + "=";
 	var decodedCookie = decodeURIComponent(document.cookie);
 	var ca = decodedCookie.split(';');
@@ -33,31 +33,32 @@ function getCookie(cname) {
 		if(c.indexOf(name) == 0) return c.substring(name.length, c.length);
 	}
 	return "";
-}
+};
 /* end stolen code; */
 
-function setStyling(sheet) {
+window.setStyling = function(sheet) {
 	document.getElementById('styling').setAttribute('href', sheet);
 	return sheet;
-}
+};
+</SCRIPT>
+<SCRIPT TYPE="application/javascript">
+window.onload = function() {
+	/* QUOTES! */
 
-/* QUOTES! */
+	var quotes = [
+		[ "Yeah, that's just how it is. Just, nothing. So much nothing that it hurts.",
+			"danger/u/ aefd79" ],
+		[ "Reason has always existed, but not always in a reasonable form.",
+			"Karl Marx" ]
+	];
 
-var quotes = [
-	[ "Yeah, that's just how it is. Just, nothing. So much nothing that it hurts.",
-		"danger/u/ aefd79" ],
-	[ "Reason has always existed, but not always in a reasonable form.",
-		"Karl Marx" ]
-];
+	quote = Math.floor(Math.random() * quotes.length);
+	document.getElementById('quote').setAttribute('content', '"' + quotes[quote][0] + '"');
+	document.getElementById('quoteauthor').setAttribute('content', '~ ' + quotes[quote][1]);
 
-quote = Math.floor(Math.random() * quotes.length);
-document.getElementById('quote').setAttribute('content', '"' + quotes[quote][0] + '"');
-document.getElementById('quoteauthor').setAttribute('content', '~ ' + quotes[quote][1]);
-alert(quotes[quote]);
-
-var sheet = getCookie('sheet');
-if(sheet != '') setStyling(sheet);
-
+	var sheet = getCookie('sheet');
+	if(sheet != '') setStyling(sheet);
+};
 </SCRIPT>
 <TABLE><TR><TD valign="top" width="50%">
 <P>Hi, I'm Deven Blake. I'm just your normal everyday nerd.</P>
