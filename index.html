@@ -11,6 +11,12 @@
 <TITLE>(d+(7-s))</TITLE>
 </HEAD>
 <BODY>
+<HEADER>
+	<SMALL>
+You can safely ignore the HTTP warning, just don't download from this site.
+Use TOR if you're worried.
+	</SMALL>
+</HEADER>
 <SCRIPT TYPE="application/javascript">
 /*
 	these code snippets stolen from
@@ -49,12 +55,16 @@ window.onload = function() {
 		[ "Yeah, that's just how it is. Just, nothing. So much nothing that it hurts.",
 			"danger/u/ aefd79" ],
 		[ "Reason has always existed, but not always in a reasonable form.",
-			"Karl Marx" ]
+			"Katy Perry" ],
+		[ "Consult your pineal gland.",
+			"Eris" ],
+		[ "Back to 8chan please",
+			"Skyglider" ],
+		[ "No, I am your father.",
+			"Darth Vader" ],
+		[ "A checklist can aid here.",
+			"Lance Leventhal" ]
 	];
-
-	quote = Math.floor(Math.random() * quotes.length);
-	document.getElementById('quote').setAttribute('content', '"' + quotes[quote][0] + '"');
-	document.getElementById('quoteauthor').setAttribute('content', '~ ' + quotes[quote][1]);
 
 	var sheet = getCookie('sheet');
 	if(sheet != '') setStyling(sheet);
@@ -129,8 +139,23 @@ I would much rather talk to you via email or Signal instead of using something l
 <P>Here's a quote for you:</P>
 <P ID="quote">"Enable JavaScript to see a quote here."</P>
 <P ID="quoteauthor">~ Deven Blake</P>
+<INPUT
+	ID="getaquote"
+	TYPE="BUTTON"
+	VALUE="Get a free quote today!"
+	ONCLICK="
+quote = Math.floor(Math.random() * quotes.length);
+document.getElementById('getaquote').setAttribute('content', 'Get another free quote today!');
+document.getElementById('quote').setAttribute('content', '\"' + quotes[quote][0] + '\"');
+document.getElementById('quoteauthor').setAttribute('content', '~ ' + quotes[quote][1]);
 
-</TD> <TD valign="top" width="50%">
+
+
+"
+/>
+
+</TD>
+<TD valign="top" width="50%">
 
 <H4>Gallery</H4>
 <P><A href="./films">check out my favorite movies</A></P>
@@ -193,9 +218,10 @@ Any stylesheet from any on-line source will work.
 
 </TD></TR></TABLE>
 
+<FOOTER>
 <HR size="1" width="25%" align="left" />
-
 <P>This site is best viewed in Firefox but is tested in Lynx.</P>
-<IMG src="http://textfiles.com/underconstruction/CoColosseumBleachers1625construction.gif" alt="This Website Under Continuous Development" />
+<IMG src="http://textfiles.com/underconstruction/CoColosseumBleachers1625construction.gif" alt="This website under continuous development." />
+</FOOTER>
 </BODY>
 </HTML>
