@@ -1,0 +1,8 @@
+/* stolen a bit from http://www.lord-enki.net/vt240.css */
+tr, td, ul, ol {
+	outline: 1px solid;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
