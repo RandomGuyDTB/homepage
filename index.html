@@ -44,6 +44,10 @@ window.getCookie = function(cname) {
 window.genQuote = function() {
 	quotes = window.quotes
 	quote = Math.floor(Math.random() * quotes.length);
+	if(quote == window.quote) ++quote;
+	if(quote > quotes.length) quote -= 2;
+	if(quote < quotes.length) /* give up */ ++quote;
+	window.quote = quote;
 	document.getElementById('getaquote').setAttribute('value', 'Get another free quote today!');
 	document.getElementById('quote').textContent = '\"' + quotes[quote][0] + '\"';
 	document.getElementById('quoteauthor').textContent = '~ ' + quotes[quote][1];
