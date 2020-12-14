@@ -44,9 +44,9 @@ window.getCookie = function(cname) {
 window.genQuote = function() {
 	quotes = window.quotes
 	quote = Math.floor(Math.random() * quotes.length);
-	document.getElementById('getaquote').setAttribute('content', 'Get another free quote today!');
-	document.getElementById('quote').setAttribute('content', '\"' + quotes[quote][0] + '\"');
-	document.getElementById('quoteauthor').setAttribute('content', '~ ' + quotes[quote][1]);
+	document.getElementById('getaquote').textContent = 'Get another free quote today!';
+	document.getElementById('quote').textContent = '\"' + quotes[quote][0] + '\"';
+	document.getElementById('quoteauthor').textContent = '~ ' + quotes[quote][1];
 }
 /* end stolen code; */
 
