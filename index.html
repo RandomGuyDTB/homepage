@@ -40,6 +40,14 @@ window.getCookie = function(cname) {
 	}
 	return "";
 };
+
+window.genQuote = function() {
+	quotes = window.quotes
+	quote = Math.floor(Math.random() * quotes.length);
+	document.getElementById('getaquote').setAttribute('content', 'Get another free quote today!');
+	document.getElementById('quote').setAttribute('content', '\"' + quotes[quote][0] + '\"');
+	document.getElementById('quoteauthor').setAttribute('content', '~ ' + quotes[quote][1]);
+}
 /* end stolen code; */
 
 window.setStyling = function(sheet) {
@@ -51,7 +59,7 @@ window.setStyling = function(sheet) {
 window.onload = function() {
 	/* QUOTES! */
 
-	var quotes = [
+	window.quotes = [
 		[ "Yeah, that's just how it is. Just, nothing. So much nothing that it hurts.",
 			"danger/u/ aefd79" ],
 		[ "Reason has always existed, but not always in a reasonable form.",
@@ -147,15 +155,7 @@ I would much rather talk to you via email or Signal instead of using something l
 	ID="getaquote"
 	TYPE="BUTTON"
 	VALUE="Get a free quote today!"
-	ONCLICK="
-quote = Math.floor(Math.random() * quotes.length);
-document.getElementById('getaquote').setAttribute('content', 'Get another free quote today!');
-document.getElementById('quote').setAttribute('content', '\"' + quotes[quote][0] + '\"');
-document.getElementById('quoteauthor').setAttribute('content', '~ ' + quotes[quote][1]);
-
-
-
-"
+	ONCLICK="genQuote();"
 />
 
 </TD>
