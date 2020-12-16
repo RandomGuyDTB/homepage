@@ -41,45 +41,44 @@ window.getCookie = function(cname) {
 	return "";
 };
 
+/* end stolen code; */
+
 window.genQuote = function() {
 	quotes = window.quotes
-	quote = Math.floor(Math.random() * quotes.length);
-	if(quote == window.quote) ++quote;
-	if(quote > quotes.length) quote -= 2;
-	if(quote < quotes.length) /* give up */ ++quote;
+	quote = window.quote;
+	while(quote == window.quote) quote = Math.floor(Math.random() * quotes.length);
 	window.quote = quote;
 	document.getElementById('getaquote').setAttribute('value', 'Get another free quote today!');
 	document.getElementById('quote').textContent = '\"' + quotes[quote][0] + '\"';
 	document.getElementById('quoteauthor').textContent = '~ ' + quotes[quote][1];
 }
-/* end stolen code; */
 
 window.setStyling = function(sheet) {
 	document.getElementById('styling').setAttribute('href', sheet);
 	return sheet;
 };
+
+/* QUOTES! */
+
+window.quotes = [
+	[ "Yeah, that's just how it is. Just, nothing. So much nothing that it hurts.",
+		"danger/u/ aefd79" ],
+	[ "Reason has always existed, but not always in a reasonable form.",
+		"Katy Perry" ],
+	[ "Consult your pineal gland.",
+		"Eris" ],
+	[ "Back to 8chan please",
+		"Skyglider" ],
+	[ "No, I am your father.",
+		"Darth Vader" ],
+	[ "A checklist can aid here.",
+		"Lance Leventhal" ]
+];
 </SCRIPT>
 <SCRIPT TYPE="application/javascript">
 window.onload = function() {
-	/* QUOTES! */
-
-	window.quotes = [
-		[ "Yeah, that's just how it is. Just, nothing. So much nothing that it hurts.",
-			"danger/u/ aefd79" ],
-		[ "Reason has always existed, but not always in a reasonable form.",
-			"Katy Perry" ],
-		[ "Consult your pineal gland.",
-			"Eris" ],
-		[ "Back to 8chan please",
-			"Skyglider" ],
-		[ "No, I am your father.",
-			"Darth Vader" ],
-		[ "A checklist can aid here.",
-			"Lance Leventhal" ]
-	];
-
-	var sheet = getCookie('sheet');
-	if(sheet != '') setStyling(sheet);
+	var sheet = window.getCookie('sheet');
+	if(sheet != '') window.setStyling(sheet);
 };
 </SCRIPT>
 <TABLE><TR><TD valign="top" width="50%">
