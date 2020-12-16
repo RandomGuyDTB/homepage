@@ -190,13 +190,6 @@ Please get in touch if this site doesn't work without JavaScript or cookies, I w
 <HR size="1" width="25%" align="left" />
 
 <H4>Control panel</H4>
-<P><SMALL>Click the following buttons to use JavaScript to refresh their contents.</SMALL></P>
-<INPUT type="button" value="the 'sheet' variable"               id="js_sheet"     onclick="document.getElementById('js_sheet').setAttribute('value', sheet);"                  />
-<INPUT type="button" value="the 'sheet' variable in the cookie" id="cookie_sheet" onclick="document.getElementById('cookie_sheet').setAttribute('value', getCookie('sheet'));" />
-<P><SMALL>The following buttons use JavaScript to modify the page title.</SMALL></P>
-<INPUT type="button" value="prefix (s-expression)" onclick="document.title='(+ d (- 7 s))';" />
-<INPUT type="button" value="infix (algrebraic)"    onclick="document.title='(d+(7-s))';"     />
-<INPUT type="button" value="postfix (rpn)"         onclick="document.title='d 7 s - +';"     />
 <P><SMALL>The following inputs use JavaScript to change this page's stylesheet.</SMALL></P>
 <INPUT type="button" value="notheme"        onclick="document.getElementById('styling').setAttribute('href', ''); sheet='';"  />
 <INPUT type="button" value="givemerights"   onclick="sheet = setStyling('/givemerights.css');"                                />
@@ -210,7 +203,11 @@ Any stylesheet from any on-line source will work.
 <INPUT id="customSheet" type="text" value="custom" />
 <INPUT type="button" value="<-" onclick="sheet = setStyling(document.getElementById('customSheet').value);" />
 <P><SMALL>The following button manipulates the site cookie.</SMALL></P>
-<INPUT type="button" value="save page settings" onclick="setCookie('sheet', sheet, 365);" />
+<INPUT type="button" value="save theme settings" onclick="setCookie('sheet', sheet, 365);" />
+<P><SMALL>The following buttons use JavaScript to modify the page title.</SMALL></P>
+<INPUT type="button" value="prefix (s-expression)" onclick="document.title='(+ d (- 7 s))';" />
+<INPUT type="button" value="infix (algrebraic)"    onclick="document.title='(d+(7-s))';"     />
+<INPUT type="button" value="postfix (rpn)"         onclick="document.title='d 7 s - +';"     />
 
 <HR size="1" width="25%" align="left" />
 
