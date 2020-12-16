@@ -44,7 +44,7 @@ window.getCookie = function(cname) {
 /* end stolen code; */
 
 window.genQuote = function() {
-	quotes = window.quotes
+	quotes = window.quotes;
 	quote = window.quote;
 	while(quote == window.quote) quote = Math.floor(Math.random() * quotes.length);
 	window.quote = quote;
