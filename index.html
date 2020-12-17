@@ -47,8 +47,7 @@ window.genQuote = function() {
 	if(window.quote != "") window.quotes.push(window.quote);
 	quoteindex = Math.floor(Math.random() * window.quotes.length);
 	window.quote = window.quotes.splice(quoteindex, 1);
-	console.log(window.quote); console.log(window.quote[0]; console.log(window.quote[1]);
-	console.log(window.quote[0][0]);
+	console.log(window.quote);
 	document.getElementById('getaquote').setAttribute('value', 'Get another free quote today!');
 	document.getElementById('quote').textContent = '\"' + window.quote[0] + '\"';
 	document.getElementById('quoteauthor').textContent = '~ ' + window.quote[1];
@@ -74,10 +73,8 @@ window.quotes = [
 		"Darth Vader" ],
 	[ "A checklist can aid here.",
 		"Lance Leventhal" ],
-	[ "Special thanks to Ками for their help adding this quote feature to this page.",
-		"Deven Blake" ],
-	[ "It soothes. It heals. It protects.",
-		"Unknown" ]
+	[ "Special thanks to Ками for their help adding quotes to this page.",
+		"Deven Blake" ]
 ];
 </SCRIPT>
 <SCRIPT TYPE="application/javascript">
