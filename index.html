@@ -44,13 +44,12 @@ window.getCookie = function(cname) {
 /* end stolen code; */
 
 window.genQuote = function() {
-	quotes = window.quotes;
-	quote = window.quote;
-	while(quote == window.quote) quote = Math.floor(Math.random() * quotes.length);
-	window.quote = quote;
+	if(window.quote != "") window.quotes.push(window.quote);
+	quoteindex = Math.floor(Math.random() * window.quotes.length);
+	window.quote = window.quotes.splice(quoteindex, 1);
 	document.getElementById('getaquote').setAttribute('value', 'Get another free quote today!');
-	document.getElementById('quote').textContent = '\"' + quotes[quote][0] + '\"';
-	document.getElementById('quoteauthor').textContent = '~ ' + quotes[quote][1];
+	document.getElementById('quote').textContent = '\"' + window.quote[0] + '\"';
+	document.getElementById('quoteauthor').textContent = '~ ' + window.quote[1];
 }
 
 window.setStyling = function(sheet) {
@@ -73,12 +72,15 @@ window.quotes = [
 		"Darth Vader" ],
 	[ "A checklist can aid here.",
 		"Lance Leventhal" ]
+	[ "Special thanks to Ками for their help adding quotes to this page.",
+		"Deven Blake" ]
 ];
 </SCRIPT>
 <SCRIPT TYPE="application/javascript">
 window.onload = function() {
 	var sheet = window.getCookie('sheet');
 	if(sheet != '') window.setStyling(sheet);
+	window.quote = "";
 };
 </SCRIPT>
 <TABLE><TR><TD valign="top" width="50%">
