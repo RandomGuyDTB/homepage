@@ -8,7 +8,7 @@
 <META name="author" content="Deven Blake" />
 <META name="description" content="Deven Blake is just your normal everyday nerd." />
 <META name="viewport" content="width=device-width, initial-scale=1" />
-<TITLE>(d+(7-s))</TITLE>
+<TITLE>(d + (7 - s))</TITLE>
 </HEAD>
 <BODY>
 <HEADER>
@@ -43,22 +43,16 @@ window.getCookie = function(cname) {
 
 /* end stolen code; */
 
-window.genQuote = function() {
-	if(window.quote != "") window.quotes.push(window.quote);
-	quoteindex = Math.floor(Math.random() * window.quotes.length);
-	window.quote = window.quotes.splice(quoteindex, 1);
-	console.log(window.quote);
-	document.getElementById('getaquote').setAttribute('value', 'Get another free quote today!');
-	document.getElementById('quote').textContent = '\"' + window.quote[0] + '\"';
-	document.getElementById('quoteauthor').textContent = '~ ' + window.quote[1];
-}
+window.onload = function() {
+	var sheet = window.getCookie('sheet');
+	if(sheet != '') window.setStyling(sheet);
+	window.quote = "";
+};
 
 window.setStyling = function(sheet) {
 	document.getElementById('styling').setAttribute('href', sheet);
 	return sheet;
 };
-
-/* QUOTES! */
 
 window.quotes = [
 	[ "Yeah, that's just how it is. Just, nothing. So much nothing that it hurts.",
@@ -76,13 +70,17 @@ window.quotes = [
 	[ "Special thanks to Ками for their help adding quotes to this page.",
 		"Deven Blake" ]
 ];
-</SCRIPT>
-<SCRIPT TYPE="application/javascript">
-window.onload = function() {
-	var sheet = window.getCookie('sheet');
-	if(sheet != '') window.setStyling(sheet);
-	window.quote = "";
-};
+
+window.genQuote = function() {
+	if(window.quote != "") window.quotes.push(window.quote);
+	quoteindex = Math.floor(Math.random() * window.quotes.length);
+	window.quote = window.quotes.splice(quoteindex, 1);
+	console.log(window.quote);
+	document.getElementById('quote').textContent = '\"' + window.quote[0] + '\"';
+	document.getElementById('quoteauthor').textContent = '~ ' + window.quote[1];
+	document.getElementById('getaquote').setAttribute('value', 'Get another free quote today!');
+}
+
 </SCRIPT>
 <TABLE><TR><TD valign="top" width="50%">
 <P>Hi, I'm Deven Blake. I'm just your normal everyday nerd.</P>
@@ -209,7 +207,7 @@ Any stylesheet from any on-line source will work.
 <INPUT type="button" value="save theme settings" onclick="window.setCookie('sheet', sheet, 365);" />
 <P><SMALL>The following buttons use JavaScript to modify the page title.</SMALL></P>
 <INPUT type="button" value="prefix (s-expression)" onclick="document.title='(+ d (- 7 s))';" />
-<INPUT type="button" value="infix (algrebraic)"    onclick="document.title='(d+(7-s))';"     />
+<INPUT type="button" value="infix (algrebraic)"    onclick="document.title='(d + (7 - s))';"     />
 <INPUT type="button" value="postfix (rpn)"         onclick="document.title='d 7 s - +';"     />
 
 <HR size="1" width="25%" align="left" />
