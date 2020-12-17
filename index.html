@@ -195,8 +195,8 @@ Please get in touch if this site doesn't work without JavaScript or cookies, I w
 <H4>Control panel</H4>
 <P><SMALL>The following inputs use JavaScript to change this page's stylesheet.</SMALL></P>
 <INPUT type="button" value="notheme"        onclick="document.getElementById('styling').setAttribute('href', ''); sheet='';"  />
-<INPUT type="button" value="givemerights"   onclick="sheet = setStyling('/givemerights.css');"                                />
-<INPUT type="button" value="windowsclassic" onclick="sheet = setStyling('/windowsclassic.css');"                              />
+<INPUT type="button" value="givemerights"   onclick="sheet = window.setStyling('/givemerights.css');"                         />
+<INPUT type="button" value="windowsclassic" onclick="sheet = window.setStyling('/windowsclassic.css');"                       />
 <P><SMALL>
 This input lets you summon an external stylesheet.
 For instance, you can enter in "/windowsclassic.css" to manually use that theme rather than pushing a button.
@@ -204,9 +204,9 @@ Any stylesheet from any on-line source will work.
 <B>Be careful because there's surely someone out there that will inject a virus into a stylesheet and get some poor sap to plug that in here.</B>
 </SMALL></P>
 <INPUT id="customSheet" type="text" value="custom" />
-<INPUT type="button" value="<-" onclick="sheet = setStyling(document.getElementById('customSheet').value);" />
+<INPUT type="button" value="<-" onclick="sheet = window.setStyling(document.getElementById('customSheet').value);" />
 <P><SMALL>The following button manipulates the site cookie.</SMALL></P>
-<INPUT type="button" value="save theme settings" onclick="setCookie('sheet', sheet, 365);" />
+<INPUT type="button" value="save theme settings" onclick="window.setCookie('sheet', sheet, 365);" />
 <P><SMALL>The following buttons use JavaScript to modify the page title.</SMALL></P>
 <INPUT type="button" value="prefix (s-expression)" onclick="document.title='(+ d (- 7 s))';" />
 <INPUT type="button" value="infix (algrebraic)"    onclick="document.title='(d+(7-s))';"     />
