@@ -18,11 +18,6 @@ window.initializequotes = function() {
 	window.quote = 0;
 }
 
-window.setStyling = function(sheet) {
-	document.getElementById('styling').setAttribute('href', sheet);
-	return sheet;
-};
-
 window.genQuote = function() {
 	window.oldquote = window.quote;
 	quoteindex = Math.floor(Math.random() * window.quotes.length);
