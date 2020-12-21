@@ -24,12 +24,10 @@ window.setStyling = function(sheet) {
 };
 
 window.genQuote = function() {
-	if(window.quote) window.quotes.push(window.quote);
+	window.oldquote = window.quote;
 	quoteindex = Math.floor(Math.random() * window.quotes.length);
 	window.quote = window.quotes.splice(quoteindex, 1)[0];
-	console.log("Quote set to:");
-	console.log(window.quote);
-	console.log(window.quotes);
+	if(window.oldquote) window.quotes.push(window.oldquote);
 	document.getElementById('quote').textContent = '\"' + window.quote[0] + '\"';
 	document.getElementById('quoteauthor').textContent = '~ ' + window.quote[1];
 	document.getElementById('getaquote').setAttribute('value', 'Get another free quote today!');
