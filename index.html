@@ -17,70 +17,16 @@ You can safely ignore the HTTP warning, just don't download from this site.
 Use TOR if you're worried.
 	</SMALL>
 </HEADER>
+
+<SCRIPT TYPE="application/javascript" SRC="/cookies.js"     ></SCRIPT>
+<SCRIPT TYPE="application/javascript" SRC="/sheets.js"      ></SCRIPT>
+<SCRIPT TYPE="application/javascript" SRC="/quotes.js" ASYNC></SCRIPT>
+
 <SCRIPT TYPE="application/javascript">
-/*
-	these code snippets stolen from
-	https://www.w3schools.com/js/js_cookies.asp
-*/
-window.setCookie = function(cname, cvalue, exdays) {
-	var d = new Date();
-	d.setTime(d.getTime() + (exdays*24*60*60*1000));
-	var expires = "expires="+ d.toUTCString();
-	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-};
-
-window.getCookie = function(cname) {
-	var name = cname + "=";
-	var decodedCookie = decodeURIComponent(document.cookie);
-	var ca = decodedCookie.split(';');
-	for(var i = 0; i <ca.length; i++) {
-		var c = ca[i];
-		while(c.charAt(0) == ' ') c = c.substring(1);
-		if(c.indexOf(name) == 0) return c.substring(name.length, c.length);
-	}
-	return "";
-};
-
-/* end stolen code; */
-
 window.onload = function() {
-	var sheet = window.getCookie('sheet');
-	if(sheet != '') window.setStyling(sheet);
-	window.quote = "";
+	window.initializesheets();
+	window.initializequotes();
 };
-
-window.setStyling = function(sheet) {
-	document.getElementById('styling').setAttribute('href', sheet);
-	return sheet;
-};
-
-window.quotes = [
-	[ "Yeah, that's just how it is. Just, nothing. So much nothing that it hurts.",
-		"danger/u/ aefd79" ],
-	[ "Reason has always existed, but not always in a reasonable form.",
-		"Katy Perry" ],
-	[ "Consult your pineal gland.",
-		"Eris" ],
-	[ "Back to 8chan please",
-		"Skyglider" ],
-	[ "No, I am your father.",
-		"Darth Vader" ],
-	[ "A checklist can aid here.",
-		"Lance Leventhal" ],
-	[ "Special thanks to Ками for their help adding quotes to this page.",
-		"Deven Blake" ]
-];
-
-window.genQuote = function() {
-	if(window.quote != "") window.quotes.push(window.quote);
-	quoteindex = Math.floor(Math.random() * window.quotes.length);
-	window.quote = window.quotes.splice(quoteindex, 1);
-	console.log(window.quote);
-	document.getElementById('quote').textContent = '\"' + window.quote[0] + '\"';
-	document.getElementById('quoteauthor').textContent = '~ ' + window.quote[1];
-	document.getElementById('getaquote').setAttribute('value', 'Get another free quote today!');
-}
-
 </SCRIPT>
 <TABLE><TR><TD valign="top" width="50%">
 <P>Hi, I'm Deven Blake. I'm just your normal everyday nerd.</P>
