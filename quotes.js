@@ -26,7 +26,7 @@ window.setStyling = function(sheet) {
 window.genQuote = function() {
 	if(window.quote) window.quotes.push(window.quote);
 	quoteindex = Math.floor(Math.random() * window.quotes.length);
-	window.quote = window.quotes.splice(quoteindex, 1);
+	window.quote = window.quotes.splice(quoteindex, 1)[0];
 	console.log("Quote set to:");
 	console.log(window.quote);
 	console.log(window.quotes);
