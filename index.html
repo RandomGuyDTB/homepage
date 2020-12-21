@@ -127,15 +127,6 @@ I would much rather talk to you via email or Signal instead of using something l
 
 <HR size="1" width="25%" align="left" />
 
-<P><SMALL>
-This page has two cookies.
-One stores your selected theme, if such a selection has been made, and the other one is from Cloudflare and probably spies on you.
-JavaScript is used to customize the page title and to customize the stylesheet being used.
-Please get in touch if this site doesn't work without JavaScript or cookies, I would prefer this to be accessible to as many people as possible with the sacrifice of prettiness if so required.
-</SMALL></P>
-
-<HR size="1" width="25%" align="left" />
-
 <H4>Control panel</H4>
 <P><SMALL>The following inputs use JavaScript to change this page's stylesheet.</SMALL></P>
 <INPUT type="button" value="notheme"        onclick="document.getElementById('styling').setAttribute('href', ''); sheet='';"  />
@@ -149,7 +140,9 @@ Any stylesheet from any on-line source will work.
 </SMALL></P>
 <INPUT id="customSheet" type="text" value="custom" />
 <INPUT type="button" value="<-" onclick="sheet = window.setStyling(document.getElementById('customSheet').value);" />
-<P><SMALL>The following button manipulates the site cookie.</SMALL></P>
+<P><SMALL>
+The following button manipulates the site cookie. This setting is the only use of cookies anywhere on this website.
+</SMALL></P>
 <INPUT type="button" value="save theme settings" onclick="window.setCookie('sheet', sheet, 365);" />
 <P><SMALL>The following buttons use JavaScript to modify the page title.</SMALL></P>
 <INPUT type="button" value="prefix (s-expression)" onclick="document.title='(+ d (- 7 s))';" />
