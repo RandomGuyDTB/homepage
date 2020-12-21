@@ -15,7 +15,7 @@ window.initializequotes = function() {
 		[ "Special thanks to Ками for their help adding quotes to this page.",
 			"Deven Blake" ]
 	];
-	window.quote = ["", ""]
+	window.quote = 0;
 }
 
 window.setStyling = function(sheet) {
@@ -24,12 +24,13 @@ window.setStyling = function(sheet) {
 };
 
 window.genQuote = function() {
-	if(window.quote != ["",""]) window.quotes.push(window.quote);
+	if(window.quote) window.quotes.push(window.quote);
 	quoteindex = Math.floor(Math.random() * window.quotes.length);
 	window.quote = window.quotes.splice(quoteindex, 1);
 	console.log("Quote set to:");
 	console.log(window.quote);
+	console.log(window.quotes);
 	document.getElementById('quote').textContent = '\"' + window.quote[0] + '\"';
 	document.getElementById('quoteauthor').textContent = '~ ' + window.quote[1];
 	document.getElementById('getaquote').setAttribute('value', 'Get another free quote today!');
-}
+};
