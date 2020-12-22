@@ -1,6 +1,8 @@
 /*
 	these code snippets stolen from
 	https://www.w3schools.com/js/js_cookies.asp
+
+	window.setCookie() sets a cookie, window.getCookie() gets a cookie.
 */
 
 window.setCookie = function(cname, cvalue, exdays) {
@@ -21,5 +23,3 @@ window.getCookie = function(cname) {
 	}
 	return "";
 };
-
-/* end stolen code; */
