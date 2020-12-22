@@ -13,7 +13,13 @@ window.initializequotes = function() {
 		[ "A checklist can aid here.",
 			"Lance Leventhal" ],
 		[ "Special thanks to Ками for their help adding quotes to this page.",
-			"Deven Blake" ]
+			"Deven Blake" ],
+		[ "You never know.",
+			"Mr. McSweeney" ],
+		[ "You lost the game.",
+			"Anonymous" ],
+		[ "Have you tried turning your computer off and on again?",
+			"Pre-historic phrase" ]
 	];
 	window.quote = 0;
 }
