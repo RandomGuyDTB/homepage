@@ -59,5 +59,5 @@ window.genQuote = function() {
 	if(window.oldquote) window.quotes.push(window.oldquote);
 	document.getElementById('quote').textContent = '\"' + window.quote[0] + '\"';
 	document.getElementById('quoteauthor').textContent = '~ ' + window.quote[1];
-	document.getElementById('getaquote').setAttribute('value', 'Get another free quote today!');
+//	document.getElementById('getaquote').setAttribute('value', 'Get another free quote today!');
 };
