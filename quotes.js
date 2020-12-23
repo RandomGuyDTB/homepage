@@ -40,7 +40,19 @@ window.initializequotes = function() {
 		[ "You lost the game.",
 			"Anonymous" ],
 		[ "Have you tried turning your computer off and on again?",
-			"Pre-historic phrase" ]
+			"Pre-historic phrase" ],
+		[ "Jerma isn't particularly religious.",
+			"Jerma985 Wikitubia Fandom article" ],
+		[ "Swag.",
+			"Neil Cicierega" ],
+		[ "put me on here now",
+			"arsonist catboy" ],
+		[ "These are no longer memes this is y'all repressed anger",
+			"Khalifist" ],
+		[ "christmas kums early!",
+			"Kum & Go official Twitter account" ],
+		[ "put the monkys in the bag. NOW",
+			"murrumur" ]
 	];
 	window.quote = 0;
 }
