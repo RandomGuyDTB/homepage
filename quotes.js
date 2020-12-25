@@ -51,8 +51,8 @@ window.initializequotes = function() {
 			"Khalifist" ],
 		[ "christmas kums early!",
 			"Kum & Go official Twitter account" ],
-		[ "put the monkys in the bag. NOW",
-			"murrumur" ]
+		[ "this quote removed due to copyright infringement",
+			"The MPAA" ]
 	];
 	window.quote = 0;
 }
