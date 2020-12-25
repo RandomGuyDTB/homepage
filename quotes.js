@@ -52,7 +52,19 @@ window.initializequotes = function() {
 		[ "christmas kums early!",
 			"Kum & Go official Twitter account" ],
 		[ "this quote removed due to copyright infringement",
-			"The MPAA" ]
+			"The MPAA" ],
+		[ "C makes it easy to shoot yourself in the foot; C++ makes it harder, but when you do, it blows away your whole leg.",
+			"Bjarne Stroustrup" ],
+		[ "I'll sleep when I'm dead.",
+			"Warren Zevon" ],
+		[ "I would have made a good pope.",
+			"Richard M. Nixon" ],
+		[ "To sit alone with my conscience will be judgment enough for me.",
+			"Charles William Stubbs" ],
+		[ "Your enemy is where you are not.",
+			"Sun Tzu (paraphrased)" ],
+		[ "Be everywhere.",
+			"social media influencing 101" ]
 	];
 	window.quote = 0;
 }
