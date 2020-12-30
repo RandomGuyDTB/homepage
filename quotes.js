@@ -64,7 +64,9 @@ window.initializequotes = function() {
 		[ "Your enemy is where you are not.",
 			"Sun Tzu (paraphrased)" ],
 		[ "Be everywhere.",
-			"social media influencing 101" ]
+			"social media influencing 101" ],
+		[ "I wish everyone was bald.",
+			"Anonymous" ]
 	];
 	window.quote = 0;
 }
