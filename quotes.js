@@ -66,7 +66,9 @@ window.initializequotes = function() {
 		[ "Be everywhere.",
 			"social media influencing 101" ],
 		[ "I wish everyone was bald.",
-			"Anonymous" ]
+			"Anonymous" ],
+		[ "Who is this?",
+			"Stephen King" ]
 	];
 	window.quote = 0;
 }
