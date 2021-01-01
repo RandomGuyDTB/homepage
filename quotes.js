@@ -1,5 +1,4 @@
 /*
-
 	quotes.js
 	PUBLIC DOMAIN. CODED BY DEVEN BLAKE WITH HELP FROM КАМИ ON DISCORD.
 
@@ -7,8 +6,9 @@
 		* add two P elements with the IDs "quote" and "quoteauthor" respectively
 		* call window.initializequotes() on page load.
 		* use window.genQuote() to get a new quote.
-
 */
+
+// comments exhaustive because i hate working in JS
 
 /*
 	Will set window.quotes to the list of quotes and window.quote to 0 (to
@@ -81,11 +81,33 @@ window.initializequotes = function() {
 	Will not give you the same quote twice in a row!
 */
 window.genQuote = function() {
-	window.oldquote = window.quote;
-	quoteindex = Math.floor(Math.random() * window.quotes.length);
-	window.quote = window.quotes.splice(quoteindex, 1)[0];
-	if(window.oldquote) window.quotes.push(window.oldquote);
-	document.getElementById('quote').textContent = '\"' + window.quote[0] + '\"';
-	document.getElementById('quoteauthor').textContent = '~ ' + window.quote[1];
-//	document.getElementById('getaquote').setAttribute('value', 'Get another free quote today!');
+	// This text is to what the text of the button with ID="quoteButton"
+	// changes when a quote is generated. Used to have it be
+	// "Get a free quote today!" / "Get another free quote today!".
+	ButtonActivated = "Get another free quote today!";
+
+	// The quote currently in use.
+	window.oldQuote = window.quote;
+
+	// Get the index of the next quote we'll use in window.quotes
+	quoteIndex = Math.floor(Math.random() * window.quotes.length);
+
+	// Change the current quote to a new quote that we take out of the
+	// quotes array.
+	window.quote = window.quotes.splice(quoteIndex, 1)[0];
+
+	// If there was a quote in use, let's put it back in the quotes array.
+	if(window.oldQuote) window.quotes.push(window.oldQuote);
+
+	// This is where we show the quote.
+	quoteText = document.getElementById('quote');
+	if(quoteText) quoteText.textContent = '\"' + window.quote[0] + '\"';
+
+	// This is where we show the quote author.
+	quoteAuthorText = document.getElementById('quoteauthor');
+	if(quoteAuthorText) quoteAuthorText.textContent = '~ ' + window.quote[1];
+
+	// Change the button text to the ButtonActivated text.
+	button =  document.getElementById('quoteButton');
+	if(button) button.setAttribute('value', ButtonActivated);
 };
