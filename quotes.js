@@ -68,7 +68,13 @@ window.initializequotes = function() {
 		[ "I wish everyone was bald.",
 			"Anonymous" ],
 		[ "Who is this?",
-			"Stephen King" ]
+			"Stephen King" ],
+		[ "Nah",
+			"Soldier G65434-2" ],
+		[ "Everything not saved will be lost.",
+			"Quit screen" ],
+		[ "The kill command is a basic UNIX system command.",
+			"Matthew Helmke" ]
 	];
 	window.quote = 0;
 }
