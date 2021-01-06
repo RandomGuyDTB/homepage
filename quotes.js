@@ -74,7 +74,11 @@ window.initializequotes = function() {
 		[ "Everything not saved will be lost.",
 			"Quit screen" ],
 		[ "The kill command is a basic UNIX system command.",
-			"Matthew Helmke" ]
+			"Matthew Helmke" ],
+		[ "I potato you",
+			"idiom" ],
+		[ "If you raise the effing hot dog, I will kill you. Figure it out.",
+			"Craig Jelinek" ]
 	];
 	window.quote = 0;
 }
