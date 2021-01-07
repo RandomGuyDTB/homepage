@@ -78,7 +78,9 @@ window.initializequotes = function() {
 		[ "I potato you",
 			"idiom" ],
 		[ "If you raise the effing hot dog, I will kill you. Figure it out.",
-			"Craig Jelinek" ]
+			"Craig Jelinek" ],
+		[ "Don't think. Feel and you'll be tanasinn.",
+			"名無" ]
 	];
 	window.quote = 0;
 }
