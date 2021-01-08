@@ -18,27 +18,31 @@
 	[ quote, author ]. Kinda sucks that it has to load like (what could be)
 	a huge list every time the page loads but I (like most webdevs) am lazy
 	and It Works How It Is.
+
+	maybe these could be loaded in from a JSON somewhere? i don't wanna do
+	it if it'll drag page loading time down. already need to defer quote
+	generation because the JS is so slow
 */
 window.initializequotes = function() {
 	window.quotes = [
 		[ "Yeah, that's just how it is. Just, nothing. So much nothing that it hurts.",
 			"danger/u/ aefd79" ],
 		[ "Reason has always existed, but not always in a reasonable form.",
-			"Katy Perry" ],
+			"Katy Perry" ], // misattribution, actually from Marx
 		[ "Consult your pineal gland.",
 			"Eris" ],
 		[ "Back to 8chan please",
-			"Skyglider" ],
+			"Skyglider" ], // wirechan(?, maybe danger/u/)
 		[ "No, I am your father.",
-			"Darth Vader" ],
+			"Darth Vader" ], // Movie; Star Wars V
 		[ "A checklist can aid here.",
-			"Lance Leventhal" ],
+			"Lance Leventhal" ], // z80 book
 		[ "Special thanks to Ками for their help adding quotes to this page.",
 			"Deven Blake" ],
 		[ "You never know.",
-			"Mr. McSweeney" ],
+			"Mr. McSweeney" ], // IRL
 		[ "You lost the game.",
-			"Anonymous" ],
+			"Anonymous" ], // internet joke turned 4chan meme
 		[ "Have you tried turning your computer off and on again?",
 			"Pre-historic phrase" ],
 		[ "Jerma isn't particularly religious.",
@@ -46,15 +50,15 @@ window.initializequotes = function() {
 		[ "Swag.",
 			"Neil Cicierega" ],
 		[ "put me on here now",
-			"arsonist catboy" ],
+			"arsonist catboy" ], // Twitter (implies catboy wanted to be put on here but quote taken out of context)
 		[ "These are no longer memes this is y'all repressed anger",
-			"Khalifist" ],
+			"Khalifist" ], // Twitter
 		[ "christmas kums early!",
-			"Kum & Go official Twitter account" ],
+			"Kum & Go official Twitter account" ], // Twitter
 		[ "this quote removed due to copyright infringement",
-			"The MPAA" ],
+			"The MPAA" ], // joke
 		[ "C makes it easy to shoot yourself in the foot; C++ makes it harder, but when you do, it blows away your whole leg.",
-			"Bjarne Stroustrup" ],
+			"Bjarne Stroustrup" ], // didn't this guy make C++?
 		[ "I'll sleep when I'm dead.",
 			"Warren Zevon" ],
 		[ "I would have made a good pope.",
@@ -62,25 +66,27 @@ window.initializequotes = function() {
 		[ "To sit alone with my conscience will be judgment enough for me.",
 			"Charles William Stubbs" ],
 		[ "Your enemy is where you are not.",
-			"Sun Tzu (paraphrased)" ],
+			"Sun Tzu (paraphrased)" ], // Book; Art of War
 		[ "Be everywhere.",
 			"social media influencing 101" ],
 		[ "I wish everyone was bald.",
-			"Anonymous" ],
+			"Anonymous" ], // 4chan
 		[ "Who is this?",
-			"Stephen King" ],
+			"Stephen King" ], // joke(?)
 		[ "Nah",
-			"Soldier G65434-2" ],
+			"Soldier G65434-2" ], // video game (which one?)
 		[ "Everything not saved will be lost.",
-			"Quit screen" ],
+			"Quit screen" ], // found on t-shirt
 		[ "The kill command is a basic UNIX system command.",
-			"Matthew Helmke" ],
+			"Matthew Helmke" ], // Book; Ubuntu Linux Unleashed 2021 Edition; pg 283
 		[ "I potato you",
-			"idiom" ],
+			"idiom" ], // Tumblr
 		[ "If you raise the effing hot dog, I will kill you. Figure it out.",
 			"Craig Jelinek" ],
 		[ "Don't think. Feel and you'll be tanasinn.",
-			"名無" ]
+			"名無" ], // 2chan (hiroyki's)
+		[ "They had overshadowed her in life. They would obliterate her in death.",
+			"Khaled Hosseini" ] // Book; A Thousand Splendid Suns
 	];
 	window.quote = 0;
 }
