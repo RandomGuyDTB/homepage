@@ -86,7 +86,9 @@ window.initializequotes = function() {
 		[ "Don't think. Feel and you'll be tanasinn.",
 			"名無" ], // 2chan (hiroyki's)
 		[ "They had overshadowed her in life. They would obliterate her in death.",
-			"Khaled Hosseini" ] // Book; A Thousand Splendid Suns
+			"Khaled Hosseini" ], // Book; A Thousand Splendid Suns
+		[ "are your bones made out of fucking depleted uranium",
+			"Anonymous" ] // 4chan/x/ - tulpa peridot thread
 	];
 	window.quote = 0;
 }
