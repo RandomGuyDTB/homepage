@@ -88,7 +88,9 @@ window.initializequotes = function() {
 		[ "They had overshadowed her in life. They would obliterate her in death.",
 			"Khaled Hosseini" ], // Book; A Thousand Splendid Suns
 		[ "are your bones made out of fucking depleted uranium",
-			"Anonymous" ] // 4chan/x/ - tulpa peridot thread
+			"Anonymous" ], // 4chan/x/ - tulpa peridot thread
+		[ "Giving the Linus Torvalds award to the Free Software Foundation is sort of like giving the Han Solo award to the Rebel Fleet.",
+			"Richard Stallman" ] // Movie; Revolution OS (2001)
 	];
 	window.quote = 0;
 }
