@@ -90,7 +90,9 @@ window.initializequotes = function() {
 		[ "are your bones made out of fucking depleted uranium",
 			"Anonymous" ], // 4chan/x/ - tulpa peridot thread
 		[ "Giving the Linus Torvalds award to the Free Software Foundation is sort of like giving the Han Solo award to the Rebel Fleet.",
-			"Richard Stallman" ] // Movie; Revolution OS (2001)
+			"Richard Stallman" ], // Movie; Revolution OS (2001)
+		[ "Filthy Frank is the embodiment of everything a person should not be.",
+			"George Miller" ] // YouTube about page
 	];
 	window.quote = 0;
 }
