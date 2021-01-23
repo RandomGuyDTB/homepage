@@ -1,0 +1,39 @@
+/* SITE LICENSE DOES NOT APPLY TO THIS FILE.
+This file is UNLICENSED. Its copyright belongs to its original creators (NOT
+Deven Blake), they are the only ones who can license this file.
+
+	mcupdate.css
+	site theme stolen from mcupdate.tumblr.com --
+
+	Photo Minimal
+	A Tumblr theme by William Rainbird - http://william.rainbird.me
+
+	Tweaked for the Minecraft Launcher by Mojang
+
+*/
+
+body {
+	font-family: sans-serif;
+	background-color: #222222;
+	background-image: url('https://static.tumblr.com/qfn3sex/ezom7y7iq/bg_main.png');
+	color: #e0d0d0;
+}
+
+a { color: #aaaaff; }
+
+hr {
+	border: 0;
+	color: #111111;
+	background-color: #111111;
+	height: 2px;
+}
+
+h3 {
+	color: #ffffff;
+	font-size: 16px;
+}
+
+img {
+	border:0;
+	margin:0;
+}
