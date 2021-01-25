@@ -92,7 +92,11 @@ window.initializequotes = function() {
 		[ "Giving the Linus Torvalds award to the Free Software Foundation is sort of like giving the Han Solo award to the Rebel Fleet.",
 			"Richard Stallman" ], // Movie; Revolution OS (2001)
 		[ "Filthy Frank is the embodiment of everything a person should not be.",
-			"George Miller" ] // YouTube about page
+			"George Miller" ], // YouTube about page
+		[ "It should be noted that no ethically-trained software engineer would ever consent to write a DestroyBaghdad procedure. Basic professional ethics would instead require him to write a DestroyCity procedure, to which Baghdad could be given as a parameter.",
+			"Nathaniel Borenstein" ], // wikiquote
+		[ "An idiot admires complexity. A genius admires simplicity.",
+			"Terry A. Davis" ] // god
 	];
 	window.quote = 0;
 }
