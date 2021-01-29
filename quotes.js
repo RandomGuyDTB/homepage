@@ -96,7 +96,11 @@ window.initializequotes = function() {
 		[ "It should be noted that no ethically-trained software engineer would ever consent to write a DestroyBaghdad procedure. Basic professional ethics would instead require him to write a DestroyCity procedure, to which Baghdad could be given as a parameter.",
 			"Nathaniel Borenstein" ], // wikiquote
 		[ "An idiot admires complexity. A genius admires simplicity.",
-			"Terry A. Davis" ] // god
+			"Terry A. Davis" ], // god
+		[ "When in doubt, use brute force.",
+			"Ken Thompson" ], // Bumper Sticker CS
+		[ "Where MS Word is WYSIWYG (What You See Is What You Get), and Latex is WYGIWYW (What You Get Is What You Want), HTML is WYGIWYD (What You Get Is What You Deserve).".
+			"Anonymous" ] // me
 	];
 	window.quote = 0;
 }
