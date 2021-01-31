@@ -100,7 +100,15 @@ window.initializequotes = function() {
 		[ "When in doubt, use brute force.",
 			"Ken Thompson" ], // Bumper Sticker CS
 		[ "Where MS Word is WYSIWYG (What You See Is What You Get), and Latex is WYGIWYW (What You Get Is What You Want), HTML is WYGIWYD (What You Get Is What You Deserve).".
-			"Anonymous" ] // me
+			"Anonymous" ], // me
+		[ "Easy is the opposite of hard, not the opposite of time-consuming.",
+			"Brad Fitzpatrick" ], // discussion about plan9 support with Go
+		[ "Blame the Nazis for making me become a gun designer. I always wanted to construct agricultural machinery.",
+			"Mikhail Kalashnikov" ],
+		[ "since KFC fired me the 11 herbs and spices are coriander, onion powder, garlic powder, salt, white pepper, black pepper basil, parsley, chili pepper, lemon pwder, thyme, and sage.",
+			"@ashley.shoy, Tiktok" ],
+		[ "Sooner or later there has to be peace.",
+			"Abigail Thorn" ] // Identity: A Trans Coming Out Story
 	];
 	window.quote = 0;
 }
