@@ -99,7 +99,7 @@ window.initializequotes = function() {
 			"Terry A. Davis" ], // god
 		[ "When in doubt, use brute force.",
 			"Ken Thompson" ], // Bumper Sticker CS
-		[ "Where MS Word is WYSIWYG (What You See Is What You Get), and Latex is WYGIWYW (What You Get Is What You Want), HTML is WYGIWYD (What You Get Is What You Deserve).".
+		[ "Where MS Word is WYSIWYG (What You See Is What You Get), and Latex is WYGIWYW (What You Get Is What You Want), HTML is WYGIWYD (What You Get Is What You Deserve).",
 			"Anonymous" ], // me
 		[ "Easy is the opposite of hard, not the opposite of time-consuming.",
 			"Brad Fitzpatrick" ], // discussion about plan9 support with Go
