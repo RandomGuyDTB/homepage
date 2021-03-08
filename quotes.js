@@ -108,7 +108,9 @@ window.initializequotes = function() {
 		[ "since KFC fired me the 11 herbs and spices are coriander, onion powder, garlic powder, salt, white pepper, black pepper basil, parsley, chili pepper, lemon pwder, thyme, and sage.",
 			"@ashley.shoy, Tiktok" ],
 		[ "Sooner or later there has to be peace.",
-			"Abigail Thorn" ] // Identity: A Trans Coming Out Story
+			"Abigail Thorn" ], // Identity: A Trans Coming Out Story
+		[ "Ich bin ein Berliner.",
+			"John F. Kennedy" ] //some speech or something
 	];
 	window.quote = 0;
 }
