@@ -110,7 +110,9 @@ window.initializequotes = function() {
 		[ "Sooner or later there has to be peace.",
 			"Abigail Thorn" ], // Identity: A Trans Coming Out Story
 		[ "Ich bin ein Berliner.",
-			"John F. Kennedy" ] //some speech or something
+			"John F. Kennedy" ], //some speech or something
+		[ "I am a Bangor!",
+			"Erwin Kreuz" ]
 	];
 	window.quote = 0;
 }
