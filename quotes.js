@@ -112,7 +112,9 @@ window.initializequotes = function() {
 		[ "Ich bin ein Berliner.",
 			"John F. Kennedy" ], //some speech or something
 		[ "I am a Bangor!",
-			"Erwin Kreuz" ]
+			"Erwin Kreuz" ],
+		[ "It's not enough that I should succeed - others should fail.",
+			"Unknown" ]
 	];
 	window.quote = 0;
 }
