@@ -1,0 +1,11 @@
+/* is this really an OG 4chan theme?
+ * screenshots from nov 2003 look like
+ * this but idk... */
+
+body:
+	background-color: #000000;
+	color: #FFFFFF;
+
+h1, h2, h3, .sidebar {
+	color: #B77F75
+}
