@@ -1,4 +1,4 @@
-// Depends on cookies.js
+/* Depends on cookies.js (non-free) */
 
 /*
 	SHEETS.JS
@@ -12,16 +12,6 @@
 	page in order to work.
 
 	You can use setStyling("") to reset it.
-*/
-
-/*
-	www.trinity.moe
-	has the following (useful) stylesheets:
-
-	/calebmode.css - dark mode (#FFF on #000)
-	/givemerights.css - 2019 site theme
-	/windowsclassic.css - 2020 site theme;
-		based on "Windows Classic" Microsoft Windows theme
 */
 
 window.setStyling = function(sheet) {

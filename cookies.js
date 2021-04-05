@@ -1,6 +1,7 @@
 /*
-	these code snippets stolen from
+	these code snippets copied from
 	https://www.w3schools.com/js/js_cookies.asp
+	used under fair use; for copyright see https://www.w3schools.com/about/about_copyright.asp
 
 	window.setCookie() sets a cookie, window.getCookie() gets a cookie.
 */

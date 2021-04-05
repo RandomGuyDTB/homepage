@@ -114,7 +114,9 @@ window.initializequotes = function() {
 		[ "I am a Bangor!",
 			"Erwin Kreuz" ],
 		[ "It's not enough that I should succeed - others should fail.",
-			"Unknown" ]
+			"Unknown" ],
+		[ "Secundus says hello to his Prima, wherever she is. I ask, my mistress, that you love me.", // House and Office of Volusius Iuvencus
+			"Unknown ]
 	];
 	window.quote = 0;
 }
