@@ -3,7 +3,7 @@
 <HEAD>
 <LINK HREF="http://www.trinity.moe/" REL="canonical" />
 <LINK HREF="https://raw.githubusercontent.com/devenblake/homepage/main/favicon.ico" REL="shortcut icon" TYPE="image/x-icon" />
-<LINK HREF="" ID="styling" REL="stylesheet" />
+<LINK HREF="/css/blank.css" ID="styling" REL="stylesheet" />
 <META CHARSET="UTF-8" />
 <META CONTENT="Deven Blake" NAME="author" />
 <META CONTENT="Deven Blake is just your normal everyday nerd." NAME="description" />
@@ -146,7 +146,7 @@ On most of these I have had profiles in the past, but they are since deleted.
 
 <H4>Control panel</H4>
 <SMALL>The following inputs use JavaScript to change this page's stylesheet:<BR /></SMALL>
-<INPUT ONCLICK="document.getElementById('styling').setAttribute('href', ''); sheet='';"     TYPE="button" VALUE="notheme"        />
+<INPUT ONCLICK="sheet = window.setStyling('/css/blank.css);"                                TYPE="button" VALUE="notheme"        />
 <INPUT ONCLICK="sheet = window.setStyling('/css/givemerights.css');"                        TYPE="button" VALUE="givemerights"   />
 <INPUT ONCLICK="sheet = window.setStyling('/css/windowsclassic.css');"                      TYPE="button" VALUE="windowsclassic" />
 <SMALL>
