@@ -5,12 +5,13 @@
 <LINK HREF="https://raw.githubusercontent.com/devenblake/homepage/main/favicon.ico" REL="shortcut icon" TYPE="image/x-icon" />
 <LINK HREF="/css/blank.css" ID="styling" REL="stylesheet" />
 <META CHARSET="UTF-8" />
-<META CONTENT="Deven Blake" NAME="author" />
-<META CONTENT="Deven Blake is just your normal everyday nerd." NAME="description" />
+<META CONTENT="Trinity Blake" NAME="author" />
+<META CONTENT="Trinity's personal website." NAME="description" />
 <META CONTENT="width=device-width, initial-scale=1" NAME="viewport" />
 <META CONTENT="https://ia601509.us.archive.org/31/items/trinitydotmoe88x31/trinitydotmoe88x31.bmp" NAME="og:image" />
 <META CONTENT="interest-cohort=()" HTTP-EQUIV="Permissions-Policy" /> <!-- FUCK GOOGLE -->
-<TITLE>(d + (7 - s))</TITLE>
+<STYLE></STYLE>
+<TITLE>trinity dot moe</TITLE> <!-- Also considered: 1945-07-16T05:26-06:00 -->
 </HEAD>
 <BODY>
 
@@ -18,11 +19,10 @@
 <SCRIPT       TYPE="application/javascript" SRC="/sheets.js"  ></SCRIPT>
 
 <SCRIPT TYPE="application/javascript">//<!--
-window.onload = window.initializesheets();
-};
+window.onload = window.initializesheets;
 //--></SCRIPT>
 
-<P>Hi, I'm Deven Blake. I'm just your normal everyday nerd.</P>
+<P>Hi, I'm Deven Trinity Blake. I'm just your normal everyday nerd.</P>
 <SMALL>
 translations of my name include: <BR />
 ديفين بلايك <BR />
@@ -46,7 +46,9 @@ See something wack? File an issue. Got something to share? Make a pull request. 
 <A HREF="#services">#services</A>,
 <A HREF="#praise">#praise</A>,
 <A HREF="#control">#control</A>,
+<A HREF="#playground">#playground</A>,
 <A HREF="#zelda">#zelda</A>,
+<A HREF="#htmlbeliefs">#htmlbeliefs</A>,
 <A HREF="#now">#now</A>,
 <A HREF="#harmful">#harmful</A>,
 <A HREF="#trinitisms">#trinitisms</A>,
@@ -158,6 +160,7 @@ Seriously. The code is yours. Take all the JS without crediting me. Hotlink the 
 <B>GitHub</B>, devenblake;
 <B>GitLab</B>, devenblake;
 <B>Hacker News</B>, devenblake;
+<I><B>Ieddit</B>, but nobody's responded to my multiple requests to delete my unused account</I>;
 <I><B>itch.io</B>, devenblake</I>;
 <I><B>Matter</B>, deven</I>;
 <I><B>Notabug</B>, deven</I>;
@@ -165,6 +168,7 @@ Seriously. The code is yours. Take all the JS without crediting me. Hotlink the 
 <B>Reddit</B>, u/devenblake;
 <I><B>Soundcloud</B>, devenblake</I>;
 <I><B>SpaceHey</B>, dtb</I>;
+<I><B>TikTok</B>, trn1ty</I>;
 <I><B>Twitter</B>, but I'm suspended on both @officialiowa and @trn1ty (which prevents me from deactivating my accounts, which I will when I can)</I>;
 <B>Wikipedia</B>, DTB
 	</P>
@@ -195,7 +199,7 @@ On most of these I have had profiles in the past, but they are since deleted.
 
 <HR ALIGN="left" SIZE="1" WIDTH="25%" />
 
-<H3 ID="control"><A HREF="#control">Control panel</A></H3>
+<H3 ID="control"><A HREF="#control">Set site theme</A></H3>
 <SMALL>The following inputs use JavaScript to change this page's stylesheet:<BR /></SMALL>
 <INPUT ONCLICK="sheet = window.setStyling('/css/blank.css);"                                TYPE="button" VALUE="notheme"        />
 <INPUT ONCLICK="sheet = window.setStyling('/css/givemerights.css');"                        TYPE="button" VALUE="givemerights"   />
@@ -210,10 +214,17 @@ Any stylesheet from any on-line source will work.
 <INPUT ONCLICK="sheet = window.setStyling(document.getElementById('customSheet').value);" TYPE="button" VALUE="apply" />
 <SMALL><BR />The following button manipulates the site cookie. This setting is the only use of cookies anywhere on this website.<BR /></SMALL>
 <INPUT ONCLICK="window.setCookie('sheet', sheet, 365);" TYPE="button" VALUE="save theme settings" />
-<SMALL><BR />The following buttons use JavaScript to modify the page title.<BR /></SMALL>
-<INPUT ONCLICK="document.title='(+ d (- 7 s))';"        TYPE="button" VALUE="prefix (s-expression)" />
-<INPUT ONCLICK="document.title='(d + (7 - s))';"        TYPE="button" VALUE="infix (algrebraic)"    />
-<INPUT ONCLICK="document.title='d 7 s - +';"            TYPE="button" VALUE="postfix (rpn)"         />
+<SMALL><BR />The following button would change the alignment of <I>this page's</I> text if it worked.<BR /></SMALL>
+<INPUT ONCLICK="document.querySelector('STYLE').innerhtml = 'body { text-align: right; }';" TYPE="button" VALUE="right" />
+<P></P>
+
+<HR ALIGN="left" SIZE="1" WIDTH="25%" />
+
+<H3 ID="playground"><A HREF="#playground">JavaScript playground</A></H3>
+<INPUT ID="text" TYPE="text" VALUE="text" />
+<INPUT ONCLICK="document.getElementById('text').value = document.getElementById('text').value.toLowerCase()" TYPE="button" VALUE=".toLowerCase()" />
+<INPUT ONCLICK="document.getElementById('text').value = document.getElementById('text').value.toUpperCase()" TYPE="button" VALUE=".toUpperCase()" />
+<INPUT ONCLICK="document.title = document.getElementById('text').value" TYPE="button" VALUE="set document title" />
 <P></P>
 
 <HR ALIGN="left" SIZE="1" WIDTH="25%" />
@@ -224,6 +235,50 @@ Any stylesheet from any on-line source will work.
 curl http://www.trinity.moe/zelda.sh | sudo sh
 </A>
 </CODE>
+
+<HR ALIGN="left" SIZE="1" WIDTH="25%" />
+
+<H3 ID="htmlbeliefs"><A HREF="#htmlbeliefs">What makes good HTML</A></H3>
+<H4>updated 2021-05-12</H4>
+<P>
+It's no secret that I type every character of my website, by hand, without any form of generation.
+I brag about it a lot. It's my justification for calling other, ostensibly better websites garbage.
+It also doubles as a bit of a running gag. The intention, partially, is to shock people.
+Also a bit to inspire them. "All you need is a browser and a text editor." And the usual contrarianism.
+Many of these qualities are considered bad and for good reasons - it's just needless. We've progressed past raw HTML-writing.
+Modern computers can handle modern websites. And these are all not only good reasons but true.
+</P>
+<P>
+However keep in mind that sometimes progress isn't good. (I <B><I>do not</I></B> mean social progress, which I support in most forms.)
+Where has progress in the web taken us? <I>Commercial advertisements</I> in cyber-space? Web browsers running proprietary third party code?
+Digitally restricted media being limited to playback within browsers? While yes, these are technological advancements, they're a
+progression of Capitalism, not of humanity. They are a sign of the conquest of the web by the hands of the corporate world. Yuck.
+</P>
+<P>
+So I don't write bare HTML to be contrary to other "web developers", though contrarianism is a welcome part of it.
+I write bare HTML to encourage the usage of web browsers that prioritize privacy and tell anyone looking to make a buck through the web to sod off.
+</P>
+<P>Anyway, with the philosophical side out of the way, here's a list in arbitrary order of things I think make good HTML</P>
+<UL>
+	<LI>
+No necessary JavaScript <I>at all</I>.
+If your site isn't accessible with NoScript enabled it's totally useless.
+If you provide a service via JavaScript, rewrite it in native code.
+If you provide a service that's redundant to others' services, good on you.
+There needs to be more software diversity even with technologies I don't necessarily like.
+	</LI>
+	<LI>
+Your site should be viewable without CSS.
+It doesn't need to look pretty, it needs to be viewable and useable.
+	</LI>
+	<LI>
+No <CODE>DIV</CODE>s or <CODE>SPAN</CODE>s.
+If you're following the rest of these rules they're totally unnecessary.
+	</LI>
+	<LI>
+No minification of any site code ever. If your site takes a long time to load you need multiple pages or less bloat.
+	</LI>
+</UL>
 
 <HR ALIGN="left" SIZE="1" WIDTH="25%" />
 
