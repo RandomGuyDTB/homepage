@@ -38,20 +38,23 @@ See something wack? File an issue. Got something to share? Make a pull request. 
 </P>
 
 <P><I>Click to jump to...
+<B>living</B>:
 <A HREF="#contact">#contact</A>,
 <A HREF="#gallery">#gallery</A>,
-<A HREF="#kinlist">#kinlist</A>,
-<A HREF="#extensions">#extensions</A>,
-<A HREF="#privacy">#privacy</A>,
-<A HREF="#services">#services</A>,
-<A HREF="#praise">#praise</A>,
 <A HREF="#control">#control</A>,
-<A HREF="#playground">#playground</A>,
-<A HREF="#zelda">#zelda</A>,
-<A HREF="#htmlbeliefs">#htmlbeliefs</A>,
-<A HREF="#now">#now</A>,
 <A HREF="#harmful">#harmful</A>,
+<A HREF="#playground">#playground</A>,
+<A HREF="#praise">#praise</A>,
+<A HREF="#services">#services</A>,
 <A HREF="#trinitisms">#trinitisms</A>,
+<A HREF="#zelda">#zelda</A>;
+<B>ephemeral</B>:
+<A HREF="#extensions">#extensions</A>,
+<A HREF="#htmlbeliefs">#htmlbeliefs</A>,
+<A HREF="#kinlist">#kinlist</A>,
+<A HREF="#now">#now</A>,
+<A HREF="#privacy">#privacy</A>,
+<B>shilling</B>:
 <A HREF="#stickers">#stickers</A>
 </I></P>
 
@@ -75,76 +78,51 @@ See something wack? File an issue. Got something to share? Make a pull request. 
 
 <HR ALIGN="left" SIZE="1" WIDTH="25%" />
 
-<H3 ID="kinlist"><A HREF="#kinlist">Here's my kinlist</A></H3>
-<H4>updated 2021-05-04</H4>
+<H3 ID="control"><A HREF="#control">Set site theme</A></H3>
+<SMALL>The following inputs use JavaScript to change this page's stylesheet:<BR /></SMALL>
+<INPUT ONCLICK="sheet = window.setStyling('/css/blank.css);"                                TYPE="button" VALUE="notheme"        />
+<INPUT ONCLICK="sheet = window.setStyling('/css/givemerights.css');"                        TYPE="button" VALUE="givemerights"   />
+<INPUT ONCLICK="sheet = window.setStyling('/css/windowsclassic.css');"                      TYPE="button" VALUE="windowsclassic" />
+<SMALL>
+<BR />This input lets you summon an external stylesheet.
+For instance, you can enter in "/css/windowsclassic.css" to manually use that theme rather than pushing a button. (<I>update as of 2021-04-05: CSS has been moved to /css/</I>).
+Any stylesheet from any on-line source will work.
+<B>Be careful because there's surely someone out there that will inject a virus into a stylesheet and get some poor sap to plug that in here.</B>
+<BR /></SMALL>
+<INPUT ID="customSheet" TYPE="text" VALUE="custom" />
+<INPUT ONCLICK="sheet = window.setStyling(document.getElementById('customSheet').value);" TYPE="button" VALUE="apply" />
+<SMALL><BR />The following button manipulates the site cookie. This setting is the only use of cookies anywhere on this website.<BR /></SMALL>
+<INPUT ONCLICK="window.setCookie('sheet', sheet, 365);" TYPE="button" VALUE="save theme settings" />
+<SMALL><BR />The following button would change the alignment of <I>this page's</I> text if it worked.<BR /></SMALL>
+<INPUT ONCLICK="document.querySelector('STYLE').innerhtml = 'body { text-align: right; }';" TYPE="button" VALUE="right" />
+<P></P>
 
-<P>I should say that what I mean by "kin" is just that I identify with, or have a kinship with, these characters.
-I don't believe I <I>am</I> these characters.
-I've heard that's a thing.
-</P>
+<HR ALIGN="left" SIZE="1" WIDTH="25%" />
+
+<H3 ID="playground"><A HREF="#playground">JavaScript playground</A></H3>
+<INPUT ID="text" TYPE="text" VALUE="text" />
+<INPUT ONCLICK="document.getElementById('text').value = document.getElementById('text').value.toLowerCase()" TYPE="button" VALUE=".toLowerCase()" />
+<INPUT ONCLICK="document.getElementById('text').value = document.getElementById('text').value.toUpperCase()" TYPE="button" VALUE=".toUpperCase()" />
+<INPUT ONCLICK="document.title = document.getElementById('text').value" TYPE="button" VALUE="set document title" />
+<P></P>
+
+<HR ALIGN="left" SIZE="1" WIDTH="25%" />
+
+<H3 ID="harmful"><A HREF="#harmful">Software I hate</A></H3>
+
+<H4>Amount of times I have had issues with PulseAudio</H4>
+<P>As of 2021-05-06: <B>1</B></P>
+
+<H4>Amount of times I have had issues with SystemD</H4>
+<P>As of 2021-05-06: <B>0</B> (I don't use SystemD)</P>
+
+<HR ALIGN="left" SIZE="1" WIDTH="25%" />
+
+<H3 ID="praise"><A HREF="#praise">Praise for www.trinity.moe's bold approach to the web</A></H3>
 <UL>
-<LI>ANARCHY Stocking</LI>
-<LI>CALL Annalee</LI>
-<LI>Dr. Strangelove</LI>
-<LI>The Han Solo Angry Bird from Angry Birds Star Wars specifically. Not Han Solo himself.</LI>
-<LI>IKARI Shinji</LI>
-<LI>My friend Lily (who is a real person, but is cool and I aspire to be more like her)</LI>
-<LI>SHAN Ling</LI>
+<LI><CODE>[2021-03-27T04:44+0400] 🛸UFO🛸: I wanna hug trinity</CODE></LI>
+<LI>"<A HREF="https://invidious.tube/watch?v=fUpZO9LnNo0">my computer is making mustard gases</A>" ~ <I>a happy site visitor</I></LI>
 </UL>
-
-<HR ALIGN="left" SIZE="1" WIDTH="25%" />
-
-<H3 ID="extensions"><A HREF="#extensions">Browser extensions I use</A></H3>
-<H4>updated 2021-05-08</H4>
-<P>
-These are browser extensions I usually install and use.
-These are Mozilla Firefox extensions that work in the latest versions of Mozilla Firefox.
-If you use Google Chrome, <A HREF="/shitlist#alphabet">please stop</A>.
-</P>
-<UL>
-	<LI><I>For Firefox and TOR Browser</I></LI><UL>
-		<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/">uBlock Origin</A></LI>
-		<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/uaswitcher/">User-Agent Switcher</A></LI>
-		</UL>
-	<LI><I>For just Firefox</I></LI><UL>
-		<LI>Containerization</LI><UL>
-			<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/contain-amazon/">Amazon Container</A></LI>
-			<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/facebook-container/">Facebook Container</A></LI>
-			<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/google-container/">Google Container</A></LI>
-			<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/contain-reddit/">Reddit Container</A></LI>
-			</UL>
-		<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/clearurls/">ClearURLs</A></LI>
-		<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/google-analytics-blocker/">Google Analytics Blocker</A></LI>
-		<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/image-search-options/">Image Search Options</A></LI>
-		<LI><A HREF="https://shinigami-eyes.github.io/">Shinigami Eyes</A></LI>
-		<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/single-file/">SingleFile</A></LI>
-                <LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/">Violentmonkey</A></LI>
-		<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/wayback-machine_new/">Wayback Machine</A></LI>
-		</UL>
-	</UL>
-<H5>Other Art</H5><UL>
-	<LI><A HREF="https://gist.github.com/emmatebibyte/f3ea2a6f589ff26d0fce1900271446b8">Emma Tebibyte's recommended Firefox extensions</A> (sourced for entries on this list)</LI>
-	</UL>
-
-<HR ALIGN="left" SIZE="1" WIDTH="25%" />
-
-<H3 ID="privacy"><A HREF="#privacy">Site privacy policy:</A></H3>
-<H4>updated 2021-03-14</H4>
-<P>
-This site uses Cloudflare for DNS but shouldn't have any Cloudflare tracking or anything like that.
-There's no proxying. Nor do I (currently) log visitor IP addresses - <I>this may change</I>.
-I like knowing from where my visitors are. But I don't know if I'd ever really do something invasive like that.
-</P><P>
-The only cookie used in this site is to establish the user's preference when it comes to the site theme.
-This can be set using the control panel on the site index and isn't set at all until "save theme settings" is clicked.
-If you never save the settings there will be no cookies on this site.
-But if there are there's nothing I can do about that unless I borked the JS.
-</P><P>
-trinity.moe is served through GitHub Pages as a static site.
-You see the same code I do. No JavaScript is minified or obfuscated.
-You're free to plaigarize, pilfer, copy, whatever of this website you'd like, just don't put my name on something I didn't say.
-Seriously. The code is yours. Take all the JS without crediting me. Hotlink the CSS. It's yours. You're free.
-</P>
 
 <HR ALIGN="left" SIZE="1" WIDTH="25%" />
 
@@ -193,48 +171,72 @@ On most of these I have had profiles in the past, but they are since deleted.
 
 <HR ALIGN="left" SIZE="1" WIDTH="25%" />
 
-<H3 ID="praise"><A HREF="#praise">Praise for www.trinity.moe's bold approach to the web</A></H3>
+<H3 ID="trinitisms"><A HREF="#trinitisms">Trinitisms</A></H3>
 
-<P>"<A HREF="https://invidious.tube/watch?v=fUpZO9LnNo0">my computer is making mustard gases</A>" ~ <I>a happy site visitor</I></P>
+<P><I><B>ism</B> - A distinctive doctrine, system, or theory.</I> (From the American Heritage(R) Dictionary of the English Language, 5th ed, <A HREF="https://www.wordnik.com/words/ism">according to Wordnik</A>.)</P>
 
-<HR ALIGN="left" SIZE="1" WIDTH="25%" />
+<P>Trinitisms are decrees I make or terms I coin with no necessary reason. Or terms I use often that people don't know. Trinitisms marked with <CODE>ID</CODE> are <I>independent drivel</I> - if I didn't come up with them first, I at least came up with them independently of anyone else, or believe I did.</P>
+<P><I>Trinitism</I> when not used as a proper noun can refer to any given person's own trinitisms.</P>
 
-<H3 ID="control"><A HREF="#control">Set site theme</A></H3>
-<SMALL>The following inputs use JavaScript to change this page's stylesheet:<BR /></SMALL>
-<INPUT ONCLICK="sheet = window.setStyling('/css/blank.css);"                                TYPE="button" VALUE="notheme"        />
-<INPUT ONCLICK="sheet = window.setStyling('/css/givemerights.css');"                        TYPE="button" VALUE="givemerights"   />
-<INPUT ONCLICK="sheet = window.setStyling('/css/windowsclassic.css');"                      TYPE="button" VALUE="windowsclassic" />
-<SMALL>
-<BR />This input lets you summon an external stylesheet.
-For instance, you can enter in "/css/windowsclassic.css" to manually use that theme rather than pushing a button. (<I>update as of 2021-04-05: CSS has been moved to /css/</I>).
-Any stylesheet from any on-line source will work.
-<B>Be careful because there's surely someone out there that will inject a virus into a stylesheet and get some poor sap to plug that in here.</B>
-<BR /></SMALL>
-<INPUT ID="customSheet" TYPE="text" VALUE="custom" />
-<INPUT ONCLICK="sheet = window.setStyling(document.getElementById('customSheet').value);" TYPE="button" VALUE="apply" />
-<SMALL><BR />The following button manipulates the site cookie. This setting is the only use of cookies anywhere on this website.<BR /></SMALL>
-<INPUT ONCLICK="window.setCookie('sheet', sheet, 365);" TYPE="button" VALUE="save theme settings" />
-<SMALL><BR />The following button would change the alignment of <I>this page's</I> text if it worked.<BR /></SMALL>
-<INPUT ONCLICK="document.querySelector('STYLE').innerhtml = 'body { text-align: right; }';" TYPE="button" VALUE="right" />
-<P></P>
-
-<HR ALIGN="left" SIZE="1" WIDTH="25%" />
-
-<H3 ID="playground"><A HREF="#playground">JavaScript playground</A></H3>
-<INPUT ID="text" TYPE="text" VALUE="text" />
-<INPUT ONCLICK="document.getElementById('text').value = document.getElementById('text').value.toLowerCase()" TYPE="button" VALUE=".toLowerCase()" />
-<INPUT ONCLICK="document.getElementById('text').value = document.getElementById('text').value.toUpperCase()" TYPE="button" VALUE=".toUpperCase()" />
-<INPUT ONCLICK="document.title = document.getElementById('text').value" TYPE="button" VALUE="set document title" />
-<P></P>
+<UL>
+	<LI>
+"Disc" refers to optical and physically impressive media, such as compact discs or phonograph discs, and "disk" is for magnetic media, such as floppy disks or hard disks; there are however exceptions and edge cases.
+	</LI>
+	<LI><CODE>ID</CODE>
+<B>catfella</B> - the non-gender-specific form of "catboy" or "catgirl".
+Coined 2020-08-11 when referring to my friend Socks.
+Also in use (though not a Trinitism): <I>nyanbinary</I>.
+	</LI>
+	<LI>
+The continents shall be separated as follows: North America, South America, Eurasia, Africa, India, the middle-East, and Oceania.
+Though I hope someone important finds individual terms for each America and has a better name for the middle-East if each region's residents generally agree with me that the current naming kind of sucks.
+	</LI>
+	<LI><B>39</B> - "Thank you." In Japanese the word for 3 is "san" and the word for 9 is normally "kyuu" so 39 is pronounced "sankyuu".</LI>
+	<LI>Antarctica is cool, both literally and figuratively.</LI>
+</UL>
 
 <HR ALIGN="left" SIZE="1" WIDTH="25%" />
 
 <H3 ID="zelda"><A HREF="#zelda">Play the Zelda theme song in your terminal</A></H3>
-<CODE STYLE="DISPLAY: BLOCK;">
+<P><CODE STYLE="DISPLAY: BLOCK;">
 <A HREF="https://web.archive.org/web/20210509230449if_/https://i.redd.it/ac2za52ae6y61.png">
 curl http://www.trinity.moe/zelda.sh | sudo sh
 </A>
-</CODE>
+</CODE></P>
+
+<HR ALIGN="left" SIZE="1" WIDTH="25%" />
+
+<H3 ID="extensions"><A HREF="#extensions">Browser extensions I use</A></H3>
+<H4>updated 2021-05-08</H4>
+<P>
+These are browser extensions I usually install and use.
+These are Mozilla Firefox extensions that work in the latest versions of Mozilla Firefox.
+If you use Google Chrome, <A HREF="/shitlist#alphabet">please stop</A>.
+</P>
+<UL>
+	<LI><I>For Firefox and TOR Browser</I></LI><UL>
+		<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/">uBlock Origin</A></LI>
+		<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/uaswitcher/">User-Agent Switcher</A></LI>
+		</UL>
+	<LI><I>For just Firefox</I></LI><UL>
+		<LI>Containerization</LI><UL>
+			<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/contain-amazon/">Amazon Container</A></LI>
+			<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/facebook-container/">Facebook Container</A></LI>
+			<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/google-container/">Google Container</A></LI>
+			<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/contain-reddit/">Reddit Container</A></LI>
+			</UL>
+		<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/clearurls/">ClearURLs</A></LI>
+		<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/google-analytics-blocker/">Google Analytics Blocker</A></LI>
+		<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/image-search-options/">Image Search Options</A></LI>
+		<LI><A HREF="https://shinigami-eyes.github.io/">Shinigami Eyes</A></LI>
+		<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/single-file/">SingleFile</A></LI>
+                <LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/">Violentmonkey</A></LI>
+		<LI><A HREF="https://addons.mozilla.org/en-US/firefox/addon/wayback-machine_new/">Wayback Machine</A></LI>
+		</UL>
+	</UL>
+<H5>Other Art</H5><UL>
+	<LI><A HREF="https://gist.github.com/emmatebibyte/f3ea2a6f589ff26d0fce1900271446b8">Emma Tebibyte's recommended Firefox extensions</A> (sourced for entries on this list)</LI>
+	</UL>
 
 <HR ALIGN="left" SIZE="1" WIDTH="25%" />
 
@@ -282,6 +284,25 @@ No minification of any site code ever. If your site takes a long time to load yo
 
 <HR ALIGN="left" SIZE="1" WIDTH="25%" />
 
+<H3 ID="kinlist"><A HREF="#kinlist">Here's my kinlist</A></H3>
+<H4>updated 2021-05-04</H4>
+
+<P>I should say that what I mean by "kin" is just that I identify with, or have a kinship with, these characters.
+I don't believe I <I>am</I> these characters.
+I've heard that's a thing.
+</P>
+<UL>
+<LI>ANARCHY Stocking</LI>
+<LI>CALL Annalee</LI>
+<LI>Dr. Strangelove</LI>
+<LI>The Han Solo Angry Bird from Angry Birds Star Wars specifically. Not Han Solo himself.</LI>
+<LI>IKARI Shinji</LI>
+<LI>My friend Lily (who is a real person, but is cool and I aspire to be more like her)</LI>
+<LI>SHAN Ling</LI>
+</UL>
+
+<HR ALIGN="left" SIZE="1" WIDTH="25%" />
+
 <H3 ID="now"><A HREF="#now">What I'm doing right now</A></H3>
 <H4>updated 2021-05-08</H4>
 
@@ -291,39 +312,23 @@ No minification of any site code ever. If your site takes a long time to load yo
 
 <HR ALIGN="left" SIZE="1" WIDTH="25%" />
 
-<H3 ID="harmful"><A HREF="#harmful">Software I hate</A></H3>
-
-<H4>Amount of times I have had issues with Pulseaudio</H4>
-<P>As of 2021-05-06: <B>1</B></P>
-
-<H4>Amount of times I have had issues with SystemD</H4>
-<P>As of 2021-05-06: <B>0</B> (I don't use SystemD)</P>
-
-<HR ALIGN="left" SIZE="1" WIDTH="25%" />
-
-<H3 ID="trinitisms"><A HREF="#trinitisms">Trinitisms</A></H3>
-
-<P><I><B>ism</B> - A distinctive doctrine, system, or theory.</I> (From the American Heritage(R) Dictionary of the English Language, 5th ed, <A HREF="https://www.wordnik.com/words/ism">according to Wordnik</A>.)</P>
-
-<P>Trinitisms are decrees I make or terms I coin with no necessary reason. Or terms I use often that people don't know. Trinitisms marked with <CODE>ID</CODE> are <I>independent drivel</I> - if I didn't come up with them first, I at least came up with them independently of anyone else, or believe I did.</P>
-<P><I>Trinitism</I> when not used as a proper noun can refer to any given person's own trinitisms.</P>
-
-<UL>
-	<LI>
-"Disc" refers to optical and physically impressive media, such as compact discs or phonograph discs, and "disk" is for magnetic media, such as floppy disks or hard disks; there are however exceptions and edge cases.
-	</LI>
-	<LI><CODE>ID</CODE>
-<B>catfella</B> - the non-gender-specific form of "catboy" or "catgirl".
-Coined 2020-08-11 when referring to my friend Socks.
-Also in use (though not a Trinitism): <I>nyanbinary</I>.
-	</LI>
-	<LI>
-The continents shall be separated as follows: North America, South America, Eurasia, Africa, India, the middle-East, and Oceania.
-Though I hope someone important finds individual terms for each America and has a better name for the middle-East if each region's residents generally agree with me that the current naming kind of sucks.
-	</LI>
-	<LI><B>39</B> - "Thank you." In Japanese the word for 3 is "san" and the word for 9 is normally "kyuu" so 39 is pronounced "sankyuu".</LI>
-	<LI>Antarctica is cool, both literally and figuratively.</LI>
-</UL>
+<H3 ID="privacy"><A HREF="#privacy">Site privacy policy:</A></H3>
+<H4>updated 2021-03-14</H4>
+<P>
+This site uses Cloudflare for DNS but shouldn't have any Cloudflare tracking or anything like that.
+There's no proxying. Nor do I (currently) log visitor IP addresses - <I>this may change</I>.
+I like knowing from where my visitors are. But I don't know if I'd ever really do something invasive like that.
+</P><P>
+The only cookie used in this site is to establish the user's preference when it comes to the site theme.
+This can be set using the control panel on the site index and isn't set at all until "save theme settings" is clicked.
+If you never save the settings there will be no cookies on this site.
+But if there are there's nothing I can do about that unless I borked the JS.
+</P><P>
+trinity.moe is served through GitHub Pages as a static site.
+You see the same code I do. No JavaScript is minified or obfuscated.
+You're free to plaigarize, pilfer, copy, whatever of this website you'd like, just don't put my name on something I didn't say.
+Seriously. The code is yours. Take all the JS without crediting me. Hotlink the CSS. It's yours. You're free.
+</P>
 
 <HR ALIGN="left" SIZE="1" WIDTH="25%" />
 
