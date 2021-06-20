@@ -19,41 +19,40 @@
 <SCRIPT TYPE="application/javascript">
 /* Special thanks to wiresToGround and adamz01h for their help getting this
  * JavaScript to work. */
-window.is_highlightjs_here = 0;
+window.is_highlightjs_here = false;
 window.is_highlighted_languages = [];
 window.to_be_highlighted = [];
-window.is_highlight_stylesheet_here = 0;
+window.is_highlight_stylesheet_here = false;
 window.load_highlighting = function(language){
+	var element;
 	var script;
 	if(!window.is_highlight_stylesheet_here){
 		document.getElementById("highlight").setAttribute("href", "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css");
-		window.is_highlight_stylesheet_here = 1;
+		window.is_highlight_stylesheet_here = true;
 	}
 	if(!window.is_highlightjs_here){
 		script = document.createElement('script');
 		script.async = false;
 		script.src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js";
 		document.body.appendChild(script);
-		window.is_highlightjs_here = 1;
+		window.is_highlightjs_here = true;
 	}
 	if(window.is_highlighted_languages.indexOf(language) == -1){
 		window.to_be_highlighted.push(language);
+
 		script = document.createElement('script');
 		script.async = false;
 		script.src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/languages/" + language + ".min.js";
 		script.onload = function(){
-			document.querySelectorAll("pre code").forEach((element) => {
-				worked = 0;
-				language = window.to_be_highlighted.shift()
-				if(element.className == "language-" + language){
+			var language = window.to_be_highlighted.shift()
+			var elements = document.getElementsByClassName("language-" + language);
+			for(var i = 0; i < elements.length; ++i)
+				try
 					hljs.highlightElement(element);
-					worked = 1;
-				}
-				if(!worked)
-					console.log("Could not find any elements of lang " + language + " to be highlighted.");
-				else
-					window.is_highlighted_languages.push(language);
-			});
+				catch(err)
+					console.log(err.message);
+
+			window.is_highlighted_languages.push(language);
 		}
 		document.body.appendChild(script);
 	}
@@ -61,7 +60,7 @@ window.load_highlighting = function(language){
 </SCRIPT>
 
 <H1>POSIX cat(1) WIP ARTICLE</H1>
-<H3>updated 2021-06-19</H3>
+<H3>updated 2021-06-20</H3>
 <HR ALIGN="left" SIZE="1" WIDTH="25%" />
 <P>
 <CODE>cat</CODE> on a POSIX or otherwise UNIX-like system is a program that exists to concatenate files; to “join” one file at its end to another at its start, and output that resulting file to standard output.
