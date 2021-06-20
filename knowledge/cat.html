@@ -17,8 +17,16 @@
 <SCRIPT SRC="/sheets.js"  TYPE="application/javascript"></SCRIPT>
 <SCRIPT TYPE="application/javascript">window.onload = window.initializesheets;</SCRIPT>
 <SCRIPT TYPE="application/javascript">
+window.is_hljs_here = 0;
 window.load_highlighting = function(language){
-	var script = document.createElement('script');
+	var script;
+	if(!window.is_hljs_here){
+		script = document.createElement('script');
+		script.src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js";
+		document.body.appendChild(script);
+		window.is_hljs_here = 1;
+	}
+	script = document.createElement('script');
 	script.src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/languages/" + language + ".min.js";
 	document.body.appendChild(script);
 }
