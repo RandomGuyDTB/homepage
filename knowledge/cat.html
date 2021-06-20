@@ -14,25 +14,36 @@
 <SCRIPT SRC="/cookies.js" TYPE="application/javascript"></SCRIPT>
 <SCRIPT SRC="/sheets.js"  TYPE="application/javascript"></SCRIPT>
 <SCRIPT TYPE="application/javascript">window.onload = window.initializesheets;</SCRIPT>
+<SCRIPT TYPE="application/javascript">
+var window.load_c_highlighting = function(){
+	var script = document.createElement('script');
+	script.src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/languages/c.min.js";
+}
+var window.load_shell_highlighting = function(){
+	var script = document.createElement('script');
+	script.src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/languages/shell.min.js";
+}
+</SCRIPT>
+
 <H1>POSIX cat(1) WIP ARTICLE</H1>
 <H3>updated 2021-06-19</H3>
 <HR ALIGN="left" SIZE="1" WIDTH="25%" />
 <P>
-cat on a POSIX or otherwise UNIX-like system is a program that exists to concatenate files; to “join” one file at its end to another at its start, and output that resulting file to standard output.
-In practice this is usually accomplished by printing the contents of each sequential file argument to standard output.
+<CODE>cat</CODE> on a POSIX or otherwise UNIX-like system is a program that exists to concatenate files; to “join” one file at its end to another at its start, and output that resulting file to standard output.
 </P>
 <P>
-cat was introduced in UNIX v1 to supercede the program pr which printed the contents of a single file to the screen (McIlroy); its first-edition manual page described cat as “about the easiest way to print a file” (“cat(1)”).
-cat’s modern, typical use is more or less the same; it’s often introduced to UNIX beginners as a method to print the contents of a file to the screen, which is why many implementations of cat include options that are technically redundant - see the often-included cat -e, -t, and -v that replace the ends of lines, tabs, and invisible characters respectively with printing portrayals (“cat(1p)”).
+<CODE>cat</CODE> was introduced in UNIX v1 to supercede the program pr which printed the contents of a single file to the screen (McIlroy); its first-edition manual page described cat as “about the easiest way to print a file” (“cat(1)”).
+<CODE>cat</CODE>’s modern, typical use is more or less the same; it’s often introduced to UNIX beginners as a method to print the contents of a file to the screen, which is why many implementations of <CODE>cat</CODE> include options that are technically redundant - see the often-included <CODE>cat</CODE> -e, -t, and -v that replace the ends of lines, tabs, and invisible characters respectively with printing portrayals (“cat(1p)”).
 </P>
 <P>
-The POSIX standard as of 2003 requires only the option -u to be implemented, which prevents cat from buffering its output - on some systems, cat buffers its output in 512-byte blocks (McIlroy), similarly to dd’s default as defined by POSIX (“dd(1p)”), though most currently popular cat implementations do this by default and ignore the -u flag altogether (busybox, GNU coreutils).
-POSIX doesn’t mandate buffering by default.
+The POSIX standard as of 2003 requires only the option <CODE>-u</CODE> to be implemented, which prevents <CODE>cat</CODE> from buffering its output - on some systems, <CODE>cat</CODE> buffers its output in 512-byte blocks (McIlroy), similarly to <CODE>dd</CODE>’s default as defined by POSIX (“dd(1p)”), though most currently popular <CODE>cat</CODE> implementations do this by default and ignore the <CODE>-u</CODE> flag altogether (busybox, GNU coreutils).
+POSIX doesn’t mandate buffering by default - specifically, <CODE>-u</CODE> <I>has</I> to guarantee that the output is unbuffered, but <CODE>cat</CODE> doesn't have to buffer it in the first place and can ignore <CODE>-u</CODE> in that case.
 </P>
 <P>
-This is a POSIX-compliant implementation of UNIX cat with no additional features nor buffered output (it ignores <CODE>cat -u</CODE>) in C:
+This is a POSIX-compliant implementation of UNIX cat with no additional features nor buffered output in C:
 </P>
-<PRE><CODE>
+<INPUT ONCLICK="window.load_c_highlighting();" TYPE="button" VALUE="Press this button to enable syntax highlighting within this code." />
+<PRE><CODE CLASS="language-c">
 #include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &lt;string.h&gt;
@@ -126,7 +137,7 @@ main(int argc, char *argv[]){
 </CODE></PRE>
 
 <P>It’s worth noting that this concept of cat as a utility that sequentially prints given files to standard output means cat can be replaced by a simple shell script that does the same using dd and printf; cat as defined by POSIX is actually totally redundant to other POSIX utilities. Here’s the shell script:</P>
-<PRE><CODE>
+<PRE><CODE CLASS="language-shell">
 #!/bin/sh
 
 # some older systems will use the former POSIX_ME_HARDER rather than
@@ -204,9 +215,9 @@ exit 0
 		As of 2021-06-19 the publicly editable section reads: <I>POSIX mandates 512-byte default block sizes for the df and du utilities, reflecting the typical size of blocks on disks. When Richard Stallman and the GNU team were implementing POSIX for the GNU operating system, they objected to this on the grounds that most people think in terms of 1024 byte (or 1 KiB) blocks. The environment variable POSIX_ME_HARDER was introduced to allow the user to force the standards-compliant behaviour. The variable name was later changed to POSIXLY_CORRECT. This variable is now also used for a number of other behaviour quirks.</I>
 		</UL></LI>
 </UL></LI>
-<LI>Common cat implementations<UL>
-	<LI>busybox/busybox - coreutils/cat.c</LI>
-	<LI>GNU/coreutils - src/cat.c</LI>
+<LI>Popular cat implementations<UL>
+	<LI><A HREF="https://www.busybox.net/">busybox</A>/<A HREF="https://git.busybox.net/busybox/">busybox</A> - <A HREF="https://git.busybox.net/busybox/tree/coreutils/cat.c">coreutils/cat.c</A></LI>
+	<LI><A HREF="https://www.gnu.org/">GNU</A>/<A HREF="https://www.gnu.org/software/coreutils/">coreutils</A> - <A HREF="https://git.savannah.gnu.org/cgit/coreutils.git/tree/src/cat.c">src/cat.c</A></LI>
 </UL></LI>
 <LI>Manual pages<UL>
 	<LI><A HREF="http://man.cat-v.org/unix-1st/1/cat">cat(1)</A> (UNIX v1)</LI>
