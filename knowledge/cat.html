@@ -21,6 +21,7 @@
  * JavaScript to work. */
 window.is_highlightjs_here = 0;
 window.is_highlighted_languages = [];
+window.to_be_highlighted = [];
 window.is_highlight_stylesheet_here = 0;
 window.load_highlighting = function(language){
 	var script;
@@ -36,16 +37,25 @@ window.load_highlighting = function(language){
 		window.is_highlightjs_here = 1;
 	}
 	if(window.is_highlighted_languages.indexOf(language) == -1){
+		window.to_be_highlighted.push(language);
 		script = document.createElement('script');
 		script.async = false;
 		script.src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/languages/" + language + ".min.js";
+		script.onload = function(){
+			document.querySelectorAll("pre code").forEach((element) => {
+				worked = 0;
+				language = window.to_be_highlighted.shift()
+				if(element.className == "language-" + language){
+					hljs.highlightElement(element);
+					worked = 1;
+				}
+				if(!worked)
+					console.log("Could not find any elements of lang " + language + " to be highlighted.");
+				else
+					window.is_highlighted_languages.push(language);
+			});
+		}
 		document.body.appendChild(script);
-		window.is_highlighted_languages.push(language);
-
-		document.querySelectorAll("pre code").forEach((element) => {
-			if(element.className == "language-" + language)
-				hljs.highlightElement(element);
-		});
 	}
 }
 </SCRIPT>
