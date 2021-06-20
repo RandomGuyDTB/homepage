@@ -18,6 +18,7 @@
 <SCRIPT TYPE="application/javascript">window.onload = window.initializesheets;</SCRIPT>
 <SCRIPT TYPE="application/javascript">
 window.is_hljs_here = 0;
+window.is_highlighted = [];
 window.load_highlighting = function(language){
 	var script;
 	if(!window.is_hljs_here){
@@ -26,9 +27,12 @@ window.load_highlighting = function(language){
 		document.body.appendChild(script);
 		window.is_hljs_here = 1;
 	}
-	script = document.createElement('script');
-	script.src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/languages/" + language + ".min.js";
-	document.body.appendChild(script);
+	if(window.ishighlighted.indexOf(language) == -1){
+		script = document.createElement('script');
+		script.src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/languages/" + language + ".min.js";
+		document.body.appendChild(script);
+		window.ishighlighted.push(language);
+	}
 }
 </SCRIPT>
 
