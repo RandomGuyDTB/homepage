@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <HTML LANG="en">
 <HEAD>
-<LINK HREF="http://www.trinity.moe/FILL_IN" REL="canonical" />
+<LINK HREF="http://www.trinity.moe/knowledge/cat" REL="canonical" />
 <LINK HREF="https://raw.githubusercontent.com/devenblake/homepage/main/favicon.ico" REL="shortcut icon" TYPE="image/x-icon" />
+<LINK HREF="/css/blank.css" ID="highlight" REL="stylesheet" />
 <LINK HREF="/css/blank.css" ID="styling" REL="stylesheet" />
-<LINK HREF="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css" REL="stylesheet" />
 <META CHARSET="UTF-8" />
 <META CONTENT="interest-cohort=()" HTTP-EQUIV="Permissions-Policy" /> <!-- FUCK GOOGLE -->
 <META NAME="viewport" CONTENT="width=device-width, initial-scale=1" />
@@ -17,21 +17,35 @@
 <SCRIPT SRC="/sheets.js"  TYPE="application/javascript"></SCRIPT>
 <SCRIPT TYPE="application/javascript">window.onload = window.initializesheets;</SCRIPT>
 <SCRIPT TYPE="application/javascript">
-window.is_hljs_here = 0;
-window.is_highlighted = [];
+/* Special thanks to wiresToGround and adamz01h for their help getting this
+ * JavaScript to work. */
+window.is_highlightjs_here = 0;
+window.is_highlighted_languages = [];
+window.is_highlight_stylesheet_here = 0;
 window.load_highlighting = function(language){
 	var script;
-	if(!window.is_hljs_here){
+	if(!window.is_highlight_stylesheet_here){
+		document.getElementById("highlight").setAttribute("href", "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css");
+		window.is_highlight_stylesheet_here = 1;
+	}
+	if(!window.is_highlightjs_here){
 		script = document.createElement('script');
+		script.async = false;
 		script.src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js";
 		document.body.appendChild(script);
-		window.is_hljs_here = 1;
+		window.is_highlightjs_here = 1;
 	}
-	if(window.is_highlighted.indexOf(language) == -1){
+	if(window.is_highlighted_languages.indexOf(language) == -1){
 		script = document.createElement('script');
+		script.async = false;
 		script.src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/languages/" + language + ".min.js";
 		document.body.appendChild(script);
-		window.is_highlighted.push(language);
+		window.is_highlighted_languages.push(language);
+
+		document.querySelectorAll("pre code").forEach((element) => {
+			if(element.className == "language-" + language)
+				hljs.highlightElement(element);
+		});
 	}
 }
 </SCRIPT>
