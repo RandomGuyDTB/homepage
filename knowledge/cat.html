@@ -17,8 +17,7 @@
 <SCRIPT SRC="/sheets.js"  TYPE="application/javascript"></SCRIPT>
 <SCRIPT TYPE="application/javascript">window.onload = window.initializesheets;</SCRIPT>
 <SCRIPT ASYNC TYPE="application/javascript">
-/* Special thanks to wiresToGround and adamz01h for their help getting this
- * JavaScript to work. */
+/* see on page: acknowledgements */
 window.is_highlightjs_here = false;
 window.is_highlighted_languages = [];
 window.to_be_highlighted = [];
@@ -64,20 +63,10 @@ window.load_highlighting = function(language){
 <H1>POSIX cat(1) WIP ARTICLE</H1>
 <H3>updated 2021-06-21</H3>
 <HR ALIGN="left" SIZE="1" WIDTH="25%" />
-<P>
-<CODE>cat</CODE> on a POSIX or otherwise UNIX-like system is a program that exists to concatenate files; to “join” one file at its end to another at its start, and output that resulting file to standard output.
-</P>
-<P>
-<CODE>cat</CODE> was introduced in UNIX v1 to supercede the program pr which printed the contents of a single file to the screen (McIlroy); its first-edition manual page described cat as “about the easiest way to print a file” (“cat(1)”).
-<CODE>cat</CODE>’s modern, typical use is more or less the same; it’s often introduced to UNIX beginners as a method to print the contents of a file to the screen, which is why many implementations of <CODE>cat</CODE> include options that are technically redundant - see the often-included <CODE>cat</CODE> <CODE>-e</CODE>, <CODE>-t</CODE>, and <CODE>-v</CODE> that replace the ends of lines, tabs, and invisible characters respectively with printing portrayals (“cat(1p)”).
-</P>
-<P>
-The POSIX standard as of 2003 requires only the option <CODE>-u</CODE> to be implemented, which prevents <CODE>cat</CODE> from buffering its output - on some systems, <CODE>cat</CODE> buffers its output in 512-byte blocks (McIlroy), similarly to <CODE>dd</CODE>’s default as defined by POSIX (“dd(1p)”), though most currently popular <CODE>cat</CODE> implementations do this by default and ignore the <CODE>-u</CODE> flag altogether (busybox, GNU coreutils).
-POSIX doesn’t mandate buffering by default - specifically, <CODE>-u</CODE> <I>has</I> to guarantee that the output is unbuffered, but <CODE>cat</CODE> doesn't have to buffer it in the first place and can ignore <CODE>-u</CODE> in that case.
-</P>
-<P>
-This is a POSIX-compliant implementation of UNIX <CODE>cat</CODE> with no additional features nor buffered output in C:
-</P>
+<P><CODE>cat</CODE> on a POSIX or otherwise UNIX-like system is a program that exists to concatenate files; to “join” one file at its end to another at its start, and output that resulting file to standard output.</P>
+<P><CODE>cat</CODE> was introduced in UNIX v1 to supercede the program pr which printed the contents of a single file to the screen (McIlroy); its first-edition manual page described cat as “about the easiest way to print a file” (“cat(1)”). <CODE>cat</CODE>’s modern, typical use is more or less the same; it’s often introduced to UNIX beginners as a method to print the contents of a file to the screen, which is why many implementations of <CODE>cat</CODE> include options that are technically redundant - see the often-included <CODE>cat</CODE> <CODE>-e</CODE>, <CODE>-t</CODE>, and <CODE>-v</CODE> that replace the ends of lines, tabs, and invisible characters respectively with printing portrayals (“cat(1p)”).</P>
+<P>The POSIX standard as of 2003 requires only the option <CODE>-u</CODE> to be implemented, which prevents <CODE>cat</CODE> from buffering its output - on some systems, <CODE>cat</CODE> buffers its output in 512-byte blocks (McIlroy), similarly to <CODE>dd</CODE>’s default as defined by POSIX (“dd(1p)”), though most currently popular <CODE>cat</CODE> implementations do this by default and ignore the <CODE>-u</CODE> flag altogether (busybox, GNU coreutils). POSIX doesn’t mandate buffering by default - specifically, <CODE>-u</CODE> <I>has</I> to guarantee that the output is unbuffered, but <CODE>cat</CODE> doesn't have to buffer it in the first place and can ignore <CODE>-u</CODE> in that case.</P>
+<P>This is a POSIX-compatible implementation of UNIX <CODE>cat</CODE> with no additional features nor buffered output in C:</P>
 <INPUT ID="c_toggle" ONCLICK="window.load_highlighting('c');" TYPE="button" VALUE="Press this button to enable syntax highlighting within this code." />
 <PRE><CODE CLASS="language-c">
 #include &lt;stdio.h&gt;
@@ -178,24 +167,8 @@ main(int argc, char *argv[]){
 <PRE><CODE CLASS="language-shell">
 #!/bin/sh
 
-# some older systems will use the former POSIX_ME_HARDER rather than
-# POSIXLY_CORRECT to request strict POSIX coherence
-[ -n "$POSIX_ME_HARDER" ] &amp; [ -z "$POSIXLY_CORRECT" ] \
-	&amp;&amp; POSIXLY_CORRECT=1
-	|| true
-
-# for usage()
-argv0="$0"
-
-# dd_ is used so that dd can easily be re-defined to the unbuffered variant -
-# dd bs=1
+# dd_ is used so that dd can easily be re-defined
 dd_() { dd "$@"; }
-
-# this will only be shown if `-h` is a valid option
-usage() {
-	printf "Usage: %s [-hu] [file...]\n" "$argv0"
-	exit 1
-}
 
 # usage with 0 arguments - print standard input to standard output
 if [ -z "$1" ]; then
@@ -218,13 +191,6 @@ while [ -n "$1" ]; do
 		&amp;&amp; dd_() { dd bs=1 "$@"; } &amp;&amp; shift 1 &amp;&amp; continue \
 		|| true
 
-	# the `-h` flag isn't specified within POSIX, so ignore it if the
-	# environment is strictly conforming to POSIX
-	[ "$1" = "-h" ] &amp;&amp; [ -z "$DONT_PARSE_ARGS" ] \
-			&amp;&amp; [ -z "$POSIXLY_CORRECT" ] \
-		&amp;&amp; usage \
-		|| true
-
 	# take `-` to mean standard input if still parsing options
 	if [ "$1" = "-" ] &amp;&amp; [ -z "$DONT_PARSE_ARGS" ]; then
 		dd_ &lt;/dev/stdin 2&gt;/dev/null || exit $?
@@ -242,15 +208,14 @@ done
 exit 0
 </CODE></PRE>
 
-<P>It's worth noting that the <CODE>dd_</CODE> shell function in the above sample that allows for re-aliasing of <CODE>dd</CODE> to <CODE>dd bs=1</CODE> could be replaced with a shell variable <CODE>$DD</CODE> with the initial value <CODE>dd</CODE> and a changed value according to <CODE>-u</CODE> of <CODE>dd bs=1</CODE>. However, <CODE>alias dd="dd bs=1"</CODE> would not work due to how shell aliases are parsed; see <A HREF="https://github.com/koalaman/shellcheck/wiki/SC2262">ShellCheck wiki page SC2262</A>.</P>
+<P>It's worth noting that the <CODE>dd_</CODE> shell function in the above sample that allows for re-aliasing of <CODE>dd</CODE> to <CODE>dd bs=1</CODE> could be replaced with a shell variable <CODE>$DD</CODE> with the initial value <CODE>dd</CODE> and a changed value according to <CODE>-u</CODE> of <CODE>dd bs=1</CODE>. However, <CODE>alias dd="dd bs=1"</CODE> would not work due to how shell aliases are parsed (ShellCheck).</P>
 
 <P><CODE>cat</CODE> doesn't work well as a shell script though. The script is relatively slow for short files and very slow for very large files (though <CODE>dd</CODE> itself should probably be used to copy large files from one medium to another anyway). This is provided for educational purposes (though I personally use this shell script in my system PATH; the C implementation provided compiles to a much larger binary using gcc 11.1.0, so this saves a couple kilobytes).</P>
 
 <H2>Cited media and further reading</H2><UL>
 	<LI>Articles<UL>
 		<LI><A HREF="https://www.cs.dartmouth.edu/~doug/reader.pdf">McIlroy, M. Douglas - “A Research Unix Reader”</A></LI>
-		<LI><A HREF="https://en.wikipedia.org/wiki/POSIX#512-_vs_1024-byte_blocks">Wikipedia - “POSIX § 512- vs 1024-byte blocks”</A><UL>
-			As of 2021-06-19 the publicly editable section reads: <I>POSIX mandates 512-byte default block sizes for the df and du utilities, reflecting the typical size of blocks on disks. When Richard Stallman and the GNU team were implementing POSIX for the GNU operating system, they objected to this on the grounds that most people think in terms of 1024 byte (or 1 KiB) blocks. The environment variable POSIX_ME_HARDER was introduced to allow the user to force the standards-compliant behaviour. The variable name was later changed to POSIXLY_CORRECT. This variable is now also used for a number of other behaviour quirks.</I>
+		<LI><A HREF="https://github.com/koalaman/shellcheck/wiki/SC2262">ShellCheck wiki page SC2262 ("This alias can't be defined and used in the same parsing unit. Use a function instead.")</A></LI>
 		</UL></LI>
 	</UL></LI>
 	<LI>Manual pages<UL>
@@ -280,6 +245,11 @@ exit 0
 	</UL></LI>
 <LI>JavaScript libraries used<UL>
 	<LI><A HREF="https://highlightjs.org/">highlight.js</A></LI>
+	</UL></LI>
+<LI>Sample code help<UL>
+	<LI>Ando_Bando</LI>
+	<LI>Miles</LI>
+	<LI>WeedSmokingJew</LI>
 	</UL></LI>
 </UL>
 
