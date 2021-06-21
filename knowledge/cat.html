@@ -242,25 +242,44 @@ done
 exit 0
 </CODE></PRE>
 
-<P><CODE>cat</CODE> still has a purpose though. This shell script is relatively slow for short files and very slow for very large files (though <CODE>dd</CODE> itself should probably be used to copy large files from one medium to another anyway). This is provided for educational purposes (though I personally use this shell script in my system PATH; the C implementation provided compiles to a much larger binary using gcc 11.1.0, so this saves a couple kilobytes).</P>
+<P>It's worth noting that the <CODE>dd_</CODE> shell function in the above sample that allows for re-aliasing of <CODE>dd</CODE> to <CODE>dd bs=1</CODE> could be replaced with a shell variable <CODE>$DD</CODE> with the initial value <CODE>dd</CODE> and a changed value according to <CODE>-u</CODE> of <CODE>dd bs=1</CODE>. However, <CODE>alias dd="dd bs=1"</CODE> would not work due to how shell aliases are parsed; see <A HREF="https://github.com/koalaman/shellcheck/wiki/SC2262">ShellCheck wiki page SC2262</A>.</P>
+
+<P><CODE>cat</CODE> doesn't work well as a shell script though. The script is relatively slow for short files and very slow for very large files (though <CODE>dd</CODE> itself should probably be used to copy large files from one medium to another anyway). This is provided for educational purposes (though I personally use this shell script in my system PATH; the C implementation provided compiles to a much larger binary using gcc 11.1.0, so this saves a couple kilobytes).</P>
 
 <H2>Cited media and further reading</H2><UL>
-<LI>Articles<UL>
-	<LI><A HREF="https://www.cs.dartmouth.edu/~doug/reader.pdf">McIlroy, M. Douglas - “A Research Unix Reader”</A></LI>
-	<LI><A HREF="https://en.wikipedia.org/wiki/POSIX#512-_vs_1024-byte_blocks">Wikipedia - “POSIX § 512- vs 1024-byte blocks”</A><UL>
-		As of 2021-06-19 the publicly editable section reads: <I>POSIX mandates 512-byte default block sizes for the df and du utilities, reflecting the typical size of blocks on disks. When Richard Stallman and the GNU team were implementing POSIX for the GNU operating system, they objected to this on the grounds that most people think in terms of 1024 byte (or 1 KiB) blocks. The environment variable POSIX_ME_HARDER was introduced to allow the user to force the standards-compliant behaviour. The variable name was later changed to POSIXLY_CORRECT. This variable is now also used for a number of other behaviour quirks.</I>
+	<LI>Articles<UL>
+		<LI><A HREF="https://www.cs.dartmouth.edu/~doug/reader.pdf">McIlroy, M. Douglas - “A Research Unix Reader”</A></LI>
+		<LI><A HREF="https://en.wikipedia.org/wiki/POSIX#512-_vs_1024-byte_blocks">Wikipedia - “POSIX § 512- vs 1024-byte blocks”</A><UL>
+			As of 2021-06-19 the publicly editable section reads: <I>POSIX mandates 512-byte default block sizes for the df and du utilities, reflecting the typical size of blocks on disks. When Richard Stallman and the GNU team were implementing POSIX for the GNU operating system, they objected to this on the grounds that most people think in terms of 1024 byte (or 1 KiB) blocks. The environment variable POSIX_ME_HARDER was introduced to allow the user to force the standards-compliant behaviour. The variable name was later changed to POSIXLY_CORRECT. This variable is now also used for a number of other behaviour quirks.</I>
 		</UL></LI>
-</UL></LI>
-<LI>Popular cat implementations<UL>
-	<LI><A HREF="https://www.busybox.net/">busybox</A>/<A HREF="https://git.busybox.net/busybox/">busybox</A> - <A HREF="https://git.busybox.net/busybox/tree/coreutils/cat.c">coreutils/cat.c</A></LI>
-	<LI><A HREF="https://www.gnu.org/">GNU</A>/<A HREF="https://www.gnu.org/software/coreutils/">coreutils</A> - <A HREF="https://git.savannah.gnu.org/cgit/coreutils.git/tree/src/cat.c">src/cat.c</A></LI>
-</UL></LI>
-<LI>Manual pages<UL>
-	<LI><A HREF="http://man.cat-v.org/unix-1st/1/cat">cat(1)</A> (UNIX v1)</LI>
-	<LI><A HREF="https://www.unix.com/man-page/posix/1posix/cat/">cat(1p)</A> (The Open Group, 2003)</LI>
-	<LI><A HREF="https://www.unix.com/man-page/posix/1posix/dd/">dd(1p)</A> (The Open Group, 2003)</LI>
-	<LI><A HREF="https://www.unix.com/man-page/POSIX/1posix/printf/">printf(1p)</A> (The Open Group, 2003)</LI>
-</UL></LI>
+	</UL></LI>
+	<LI>Manual pages<UL>
+		<LI><A HREF="http://man.cat-v.org/unix-1st/1/cat">cat(1)</A> (UNIX v1)</LI>
+		<LI><A HREF="https://www.unix.com/man-page/posix/1posix/cat/">cat(1p)</A> (The Open Group, 2003)</LI>
+		<LI><A HREF="https://www.unix.com/man-page/posix/1posix/dd/">dd(1p)</A> (The Open Group, 2003)</LI>
+		<LI><A HREF="https://www.unix.com/man-page/POSIX/1posix/printf/">printf(1p)</A> (The Open Group, 2003)</LI>
+	</UL></LI>
+	<LI>Notable cat implementations<UL>
+		<LI><A HREF="https://www.busybox.net/">busybox</A>/<A HREF="https://git.busybox.net/busybox/">busybox</A> - <A HREF="https://git.busybox.net/busybox/tree/coreutils/cat.c">coreutils/cat.c</A></LI>
+		<LI><A HREF="https://www.gnu.org/">GNU</A>/<A HREF="https://www.gnu.org/software/coreutils/">coreutils</A> - <A HREF="https://git.savannah.gnu.org/cgit/coreutils.git/tree/src/cat.c">src/cat.c</A></LI>
+		<LI><A HREF="https://9p.io/plan9/">Plan 9 from Bell Labs</A> <A HREF="https://9p.io/sys/doc/release4.html">Fourth Edition</A> - <A HREF="https://github.com/plan9foundation/plan9/blob/main/sys/src/cmd/cat.c">/sys/src/cmd/cat.c</A></LI>
+		<LI><A HREF="https://en.wikipedia.org/wiki/Unix">UNIX</A> <A HREF="https://www.tuhs.org/cgi-bin/utree.pl?file=V7">v7</A> - <A HREF="https://www.tuhs.org/cgi-bin/utree.pl?file=V7/usr/src/cmd/cat.c">/usr/src/cmd/cat.c</A></LI>
+	</UL></LI>
 </UL>
+
+<H2>Acknowledgements</H2><UL>
+<LI>Content help<UL>
+	<LI>Miles</LI>
+	<LI>WeedSmokingJew</LI>
+	</UL></LI>
+<LI>JavaScript help<UL>
+	<LI>adamz01h</H1>
+	<LI>wiresToGround</LI>
+	</UL></LI>
+<LI>JavaScript libraries used<UL>
+	<LI><A HREF="https://highlightjs.org/">highlight.js</A></LI>
+	</UL></LI>
+</UL>
+
 </BODY>
 </HTML>
