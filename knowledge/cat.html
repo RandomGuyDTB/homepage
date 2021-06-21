@@ -47,10 +47,11 @@ window.load_highlighting = function(language){
 			var language = window.to_be_highlighted.shift()
 			var elements = document.getElementsByClassName("language-" + language);
 			for(var i = 0; i < elements.length; ++i)
-				try
+				try{
 					hljs.highlightElement(element);
-				catch(err)
+				}catch(err){
 					console.log(err.message);
+				}
 
 			window.is_highlighted_languages.push(language);
 		}
