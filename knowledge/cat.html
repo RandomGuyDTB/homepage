@@ -16,7 +16,7 @@
 <SCRIPT SRC="/cookies.js" TYPE="application/javascript"></SCRIPT>
 <SCRIPT SRC="/sheets.js"  TYPE="application/javascript"></SCRIPT>
 <SCRIPT TYPE="application/javascript">window.onload = window.initializesheets;</SCRIPT>
-<SCRIPT TYPE="application/javascript">
+<SCRIPT ASYNC TYPE="application/javascript">
 /* Special thanks to wiresToGround and adamz01h for their help getting this
  * JavaScript to work. */
 window.is_highlightjs_here = false;
@@ -144,6 +144,7 @@ main(int argc, char *argv[]){
 		if(parsing_opts &amp;&amp; !strcmp(argv[i], "--")){
 			parsing_opts = 0;
 			continue;
+
 		/* ignore `-u` if still parsing options */
 		}else if(parsing_opts &amp;&amp; !strcmp(argv[i], "-u"))
 			continue;
@@ -190,12 +191,9 @@ argv0="$0"
 # dd bs=1
 dd_() { dd "$@"; }
 
-# if the system wants strict POSIX coherence, don't permit usage of `cat -h`
-# because it's not defined by POSIX
+# this will only be shown if `-h` is a valid option
 usage() {
-	[ -z "$POSIXLY_CORRECT" ] \
-		&amp;&amp; printf "Usage: %s [-hu] [file...]\n" "$argv0" \
-		|| printf "Usage: %s [-u] [file...]\n" "$argv0"
+	printf "Usage: %s [-hu] [file...]\n" "$argv0"
 	exit 1
 }
 
@@ -214,7 +212,8 @@ while [ -n "$1" ]; do
 		|| true
 
 	# if `-u` specified and still parsing options, enable unbuffered output
-	# this dd is probably super slow. TODO?: find better way
+	# this is kind of a hack and a bit slow. technically it is buffered,
+	# just one byte at a time
 	[ "$1" = "-u" ] &amp;&amp; [ -z "$DONT_PARSE_ARGS" ] \
 		&amp;&amp; dd_() { dd bs=1 "$@"; } &amp;&amp; shift 1 &amp;&amp; continue \
 		|| true
@@ -243,7 +242,7 @@ done
 exit 0
 </CODE></PRE>
 
-<P><CODE>cat</CODE> still has a purpose though. This shell script is relatively slow for short files and very slow for very large files (though dd itself should probably be used to copy large files from one medium to another anyway). This is provided for educational purposes (though I personally use this shell script in my system PATH; the C implementation provided compiles to a much larger binary using gcc 11.1.0, so this saves a couple kilobytes).</P>
+<P><CODE>cat</CODE> still has a purpose though. This shell script is relatively slow for short files and very slow for very large files (though <CODE>dd</CODE> itself should probably be used to copy large files from one medium to another anyway). This is provided for educational purposes (though I personally use this shell script in my system PATH; the C implementation provided compiles to a much larger binary using gcc 11.1.0, so this saves a couple kilobytes).</P>
 
 <H2>Cited media and further reading</H2><UL>
 <LI>Articles<UL>
