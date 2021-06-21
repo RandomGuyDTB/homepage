@@ -62,7 +62,7 @@ window.load_highlighting = function(language){
 </SCRIPT>
 
 <H1>POSIX cat(1) WIP ARTICLE</H1>
-<H3>updated 2021-06-20</H3>
+<H3>updated 2021-06-21</H3>
 <HR ALIGN="left" SIZE="1" WIDTH="25%" />
 <P>
 <CODE>cat</CODE> on a POSIX or otherwise UNIX-like system is a program that exists to concatenate files; to “join” one file at its end to another at its start, and output that resulting file to standard output.
@@ -260,10 +260,12 @@ exit 0
 		<LI><A HREF="https://www.unix.com/man-page/POSIX/1posix/printf/">printf(1p)</A> (The Open Group, 2003)</LI>
 	</UL></LI>
 	<LI>Notable cat implementations<UL>
-		<LI><A HREF="https://www.busybox.net/">busybox</A>/<A HREF="https://git.busybox.net/busybox/">busybox</A> - <A HREF="https://git.busybox.net/busybox/tree/coreutils/cat.c">coreutils/cat.c</A></LI>
-		<LI><A HREF="https://www.gnu.org/">GNU</A>/<A HREF="https://www.gnu.org/software/coreutils/">coreutils</A> - <A HREF="https://git.savannah.gnu.org/cgit/coreutils.git/tree/src/cat.c">src/cat.c</A></LI>
-		<LI><A HREF="https://9p.io/plan9/">Plan 9 from Bell Labs</A> <A HREF="https://9p.io/sys/doc/release4.html">Fourth Edition</A> - <A HREF="https://github.com/plan9foundation/plan9/blob/main/sys/src/cmd/cat.c">/sys/src/cmd/cat.c</A></LI>
-		<LI><A HREF="https://en.wikipedia.org/wiki/Unix">UNIX</A> <A HREF="https://www.tuhs.org/cgi-bin/utree.pl?file=V7">v7</A> - <A HREF="https://www.tuhs.org/cgi-bin/utree.pl?file=V7/usr/src/cmd/cat.c">/usr/src/cmd/cat.c</A></LI>
+		<LI>1979 - <A HREF="http://www.bell-labs.com/">Bell Labs</A>/<A HREF="https://en.wikipedia.org/wiki/Unix">UNIX v7</A> - <A HREF="https://www.tuhs.org/cgi-bin/utree.pl?file=V7/usr/src/cmd/cat.c">/usr/src/cmd/cat.c</A></LI>
+		<LI>1992 - <A HREF="http://www.bell-labs.com/">Bell Labs</A>/<A HREF="https://9p.io/plan9/">Plan 9 from Bell Labs Fourth Edition</A> - <A HREF="https://github.com/plan9foundation/plan9/blob/main/sys/src/cmd/cat.c">/sys/src/cmd/cat.c</A></LI>
+		<LI>1995 - <A HREF="https://www.berkeley.edu/">University of California, Berkeley</A>/<A HREF="https://en.wikipedia.org/wiki/Berkeley_Software_Distribution">4.4BSD-Lite2</A> - <A HREF="https://github.com/sergev/4.4BSD-Lite2/blob/master/usr/src/bin/cat/cat.c">/usr/src/bin/cat/cat.c</A></LI>
+		<LI><B>ongoing</B> forked from 4.4BSD-Lite2 - <A HREF="https://www.netbsd.org/">NetBSD</A>/<A HREF="https://github.com/NetBSD/src">src</A> - <A HREF="https://github.com/NetBSD/src/blob/trunk/bin/cat/cat.c">bin/cat/cat.c</A></LI>
+		<LI><B>ongoing</B> started 1992 - <A HREF="https://www.gnu.org/">GNU</A>/<A HREF="https://www.gnu.org/software/coreutils/">coreutils</A> - <A HREF="https://git.savannah.gnu.org/cgit/coreutils.git/tree/src/cat.c">src/cat.c</A></LI>
+		<LI><B>ongoing</B> started 1995 - <A HREF="https://www.busybox.net/">busybox</A>/<A HREF="https://git.busybox.net/busybox/">busybox</A> - <A HREF="https://git.busybox.net/busybox/tree/coreutils/cat.c">coreutils/cat.c</A></LI>
 	</UL></LI>
 </UL>
 
