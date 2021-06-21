@@ -26,6 +26,7 @@ window.is_highlight_stylesheet_here = false;
 window.load_highlighting = function(language){
 	var element;
 	var script;
+	document.getElementById(language + "_toggle").remove();
 	if(!window.is_highlight_stylesheet_here){
 		document.getElementById("highlight").setAttribute("href", "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css");
 		window.is_highlight_stylesheet_here = true;
@@ -77,7 +78,7 @@ POSIX doesn’t mandate buffering by default - specifically, <CODE>-u</CODE> <I>
 <P>
 This is a POSIX-compliant implementation of UNIX cat with no additional features nor buffered output in C:
 </P>
-<INPUT ONCLICK="window.load_highlighting('c');" TYPE="button" VALUE="Press this button to enable syntax highlighting within this code." />
+<INPUT ID="c_toggle" ONCLICK="window.load_highlighting('c');" TYPE="button" VALUE="Press this button to enable syntax highlighting within this code." />
 <PRE><CODE CLASS="language-c">
 #include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
@@ -172,7 +173,7 @@ main(int argc, char *argv[]){
 </CODE></PRE>
 
 <P>It’s worth noting that this concept of cat as a utility that sequentially prints given files to standard output means cat can be replaced by a simple shell script that does the same using dd and printf; cat as defined by POSIX is actually totally redundant to other POSIX utilities. Here’s the shell script:</P>
-<INPUT ONCLICK="window.load_highlighting('shell');" TYPE="button" VALUE="Press this button to enable syntax highlighting within this code." />
+<INPUT ID="shell_toggle" ONCLICK="window.load_highlighting('shell');" TYPE="button" VALUE="Press this button to enable syntax highlighting within this code." />
 <PRE><CODE CLASS="language-shell">
 #!/bin/sh
 
