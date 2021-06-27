@@ -68,7 +68,7 @@ window.load_highlighting = function(language){
 <P>The POSIX standard as of 2003 requires only the option <CODE>-u</CODE> to be implemented, which prevents <CODE>cat</CODE> from buffering its output - on some systems, <CODE>cat</CODE> buffers its output in 512-byte blocks (McIlroy), similarly to <CODE>dd</CODE>’s default as defined by POSIX (“dd(1p)”), though most currently popular <CODE>cat</CODE> implementations do this by default and ignore the <CODE>-u</CODE> flag altogether (busybox, GNU coreutils). POSIX doesn’t mandate buffering by default - specifically, <CODE>-u</CODE> <I>has</I> to guarantee that the output is unbuffered, but <CODE>cat</CODE> doesn't have to buffer it in the first place and can ignore <CODE>-u</CODE> in that case.</P>
 <P>This is a POSIX-compatible implementation of UNIX <CODE>cat</CODE> with no additional features nor buffered output in C:</P>
 <INPUT ID="c_toggle" ONCLICK="window.load_highlighting('c');" TYPE="button" VALUE="Press this button to enable syntax highlighting within this code." />
-<PRE><CODE CLASS="language-c">
+<PRE><CODE CLASS="language-c" DATA-LANG="c">
 #include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &lt;string.h&gt;
@@ -164,7 +164,7 @@ main(int argc, char *argv[]){
 
 <P>It’s worth noting that this concept of cat as a utility that sequentially prints given files to standard output means <CODE>cat</CODE> can be replaced by a simple shell script that does the same using <CODE>dd</CODE> and <CODE>printf</CODE>; <CODE>cat</CODE> as defined by POSIX is actually totally redundant to other POSIX utilities. Here’s the shell script:</P>
 <INPUT ID="shell_toggle" ONCLICK="window.load_highlighting('shell');" TYPE="button" VALUE="Press this button to enable syntax highlighting within this code." />
-<PRE><CODE CLASS="language-shell">
+<PRE><CODE CLASS="language-shell" DATA-LANG="shell">
 #!/bin/sh
 
 # dd_ is used so that dd can easily be re-defined
