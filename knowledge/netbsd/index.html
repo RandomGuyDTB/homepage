@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<HTML LANG="en">
+<HEAD>
+<LINK HREF="http://www.trinity.moe/FILL_IN" REL="canonical" />
+<LINK HREF="https://raw.githubusercontent.com/devenblake/homepage/main/favicon.ico" REL="shortcut icon" TYPE="image/x-icon" />
+<LINK HREF="/css/blank.css" ID="styling" REL="stylesheet" />
+<META CHARSET="UTF-8" />
+<META CONTENT="interest-cohort=()" HTTP-EQUIV="Permissions-Policy" /> <!-- FUCK GOOGLE -->
+<META NAME="viewport" CONTENT="width=device-width, initial-scale=1" />
+<TITLE>knowledge/NetBSD</TITLE>
+</HEAD>
+<BODY>
+<P><A HREF="/">~ Return to the rest of the site</A></P>
+<SCRIPT SRC="/cookies.js" TYPE="application/javascript"></SCRIPT>
+<SCRIPT SRC="/sheets.js"  TYPE="application/javascript"></SCRIPT>
+<SCRIPT TYPE="application/javascript">window.onload = window.initializesheets;</SCRIPT>
+<H1>NetBSD</H1>
+<H3>updated 2021-07-14</H3>
+<HR ALIGN="left" SIZE="1" WIDTH="25%" />
+<H2>Mounting ext4 partitions</H2>
+<P>
+I don't know that this is documented in either the NetBSD guide or wiki.
+If you have edit access to either and see this, please, add this in with any necessary edits!
+This page is public domain (as is the rest of my site); don't worry about copyright (I can confirm anything by e-mail if needed).
+</P>
+<OL>
+<LI>Install <CODE>filesystems/fuse</CODE> and <CODE>filesystems/ext2</CODE>.</LI>
+<LI>Connect the drive with the ext4 partition you want to access.</LI>
+<LI>Use <CODE>dmesg</CODE>(8) to determine the location in <CODE>/dev/</CODE> of the disk.</LI>
+<LI>Use <CODE>disklabel</CODE>(8) to determine which partition on the disk you want to access (<CODE>disklabel /dev/<I>disk</I></CODE>)
+- it will be listed with the partition type "Linux Ext2" even though the partition may be ext4.</LI>
+<LI>Use <CODE>fuse-ext2</CODE>(1) to mount the partition (<CODE>fuse-ext2 /dev/<I>disk with partition letter</I> <I>mountpoint</I></CODE>
+- for example, <CODE>fuse-ext2 /dev/sd1e /mnt/sd1</CODE> to mount partition <I>e</I> of device <I>sd1</I> to the mountpoint <I>/mnt/sd1</I>).</LI>
+<LI>This mountpoint can be unmounted with <CODE>umount</CODE>(8) (<B>TODO: double-check this</B>) as normal.</LI>
+</OL>
+</BODY>
+</HTML>
