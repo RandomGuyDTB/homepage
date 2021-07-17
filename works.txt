@@ -1,0 +1,35 @@
+# Stuff on which I've worked.
+
+This is a vague and extremely incomplete list of things on which I've worked.
+Extremely rough draft, probably will never make it into HTML.
+
+`#` - header
+`##` - sub-header
+`*` - now deleted
+`-` - available for now (somewhere)
+
+## 2014
+* Uploaded first video to YouTube.
+
+## 2016
+* Created first video for personal YouTube channel.
+- Created mass disinformation campaign.
+
+## 2017
+- Briefly mined Bitcoin.
+- Innovated in the field of guerilla marketing.
+* Wrote two novellas.
+
+## 2018
+* Claimed to be Jesus Christ, for personal gain.
+- Set world record in Asteroids for the Atari 2600 (game 1), on first try.
+
+## 2020
+* Impersonated state of Ohio.
+* Published two poems in different media.
+* Reached a total of one million views on the popular social media app TikTok.
+- Released attempt at YouTube feed reader.
+- Started slowly and halfassedly working on reimplementation of POSIX utilities.
+
+## 2021
+
