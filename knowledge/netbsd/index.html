@@ -17,14 +17,14 @@
 <H1>NetBSD</H1>
 <H3>updated 2021-07-14</H3>
 <HR ALIGN="left" SIZE="1" WIDTH="25%" />
-<H2>Mounting ext4 partitions</H2>
+<H2>Mounting ext4 partitions with FUSE</H2>
 <P>
 I don't know that this is documented in either the NetBSD guide or wiki.
 If you have edit access to either and see this, please, add this in with any necessary edits!
 This page is public domain (as is the rest of my site); don't worry about copyright (I can confirm anything by e-mail if needed).
 </P>
 <OL>
-<LI>Install <CODE>filesystems/fuse</CODE> and <CODE>filesystems/ext2</CODE>.</LI>
+<LI>Install <CODE>filesystems/fuse</CODE> and <CODE>filesystems/fuse-ext2</CODE>.</LI>
 <LI>Connect the drive with the ext4 partition you want to access.</LI>
 <LI>Use <CODE>dmesg(8)</CODE> to determine the location in <CODE>/dev/</CODE> of the disk.</LI>
 <LI>Use <CODE>disklabel(8)</CODE> to determine which partition on the disk you want to access (<CODE>disklabel /dev/<I>disk</I></CODE>)
